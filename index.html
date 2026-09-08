@@ -386,13 +386,11 @@ function sendEmployer(event){
 
 वेतन/काम का विवरण: ${document.getElementById("edetail").value}`;
 
-  window.open(
-    "https://wa.me/" +
-    whatsappNumber +
-    "?text=" +
-    encodeURIComponent(message),
-    "_blank"
-  );
+ window.location.href =
+  "https://wa.me/" +
+  whatsappNumber +
+  "?text=" +
+  encodeURIComponent(message); 
 }
 
 </script>
