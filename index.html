@@ -1,107 +1,857 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ravi JobMitra</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RK JOB MITRA</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
-header{background:linear-gradient(135deg,#0757d5,#11a8e8);color:#fff;text-align:center;padding:30px 16px}
-h1{margin:0;font-size:32px}header p{margin:10px 0}
-main{max-width:900px;margin:auto;padding:16px}.card{background:#fff;border-radius:18px;padding:20px;margin:16px 0;box-shadow:0 4px 18px #00000012}
-h2{color:#0757d5}.buttons,.jobs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.btn,.submit,.whatsapp{display:block;width:100%;padding:15px;border:0;border-radius:12px;text-align:center;font-weight:bold;font-size:16px;text-decoration:none;cursor:pointer}
-.worker{background:#16a34a;color:#fff}.employer{background:#0757d5;color:#fff}.submit{margin-top:16px;background:#ff7a00;color:#fff}.whatsapp{background:#25d366;color:#fff;margin-top:10px}
-label{display:block;font-weight:bold;margin:12px 0 6px}input,textarea{width:100%;padding:13px;border:1px solid #ccd3df;border-radius:10px;font-size:16px}textarea{min-height:80px}
-.search{background:#eef5ff;border:2px solid #d8e7ff}.job{padding:16px;border:1px solid #e1e5eb;border-radius:14px}.job h3{margin:0 0 8px;color:#0757d5}
-.badge{display:inline-block;padding:5px 9px;border-radius:20px;background:#e9f7ef;color:#168a45;font-size:13px;font-weight:bold}
-.job button{margin-top:10px;padding:10px 14px;border:0;border-radius:9px;background:#0757d5;color:#fff;font-weight:bold}
-.notice{padding:12px;border-radius:10px;background:#fff7e6;color:#7a4d00;margin-top:12px}.hidden{display:none}
-footer{text-align:center;background:#172033;color:#fff;padding:22px}
-@media(max-width:600px){.buttons,.jobs{grid-template-columns:1fr}h1{font-size:27px}}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,"Noto Sans Devanagari",sans-serif;
+}
+
+body{
+  background:#f1f5f9;
+  color:#172033;
+  padding-bottom:90px;
+}
+
+header{
+  background:linear-gradient(135deg,#0757a5,#13a9df);
+  color:white;
+  text-align:center;
+  padding:30px 15px;
+}
+
+header h1{
+  font-size:34px;
+  margin-bottom:12px;
+}
+
+header p{
+  font-size:19px;
+  line-height:1.6;
+}
+
+nav{
+  display:flex;
+  background:white;
+  box-shadow:0 2px 8px #0002;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+nav button{
+  flex:1;
+  border:0;
+  background:white;
+  padding:18px 5px;
+  font-size:18px;
+  font-weight:bold;
+  color:#07578f;
+}
+
+nav button.active{
+  background:#07578f;
+  color:white;
+}
+
+main{
+  max-width:950px;
+  margin:auto;
+  padding:20px 14px;
+}
+
+.card{
+  background:white;
+  border-radius:25px;
+  padding:28px;
+  margin-bottom:22px;
+  box-shadow:0 5px 20px #0001;
+}
+
+.welcome{
+  text-align:center;
+}
+
+.welcome h2{
+  color:#0757a5;
+  font-size:30px;
+  margin-bottom:15px;
+}
+
+.welcome p{
+  font-size:19px;
+  line-height:1.8;
+}
+
+.buttons{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:22px;
+}
+
+.bigbtn{
+  border:0;
+  border-radius:18px;
+  padding:25px 10px;
+  font-size:20px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.worker{
+  background:#16a34a;
+  color:white;
+}
+
+.employer{
+  background:#075bd5;
+  color:white;
+}
+
+.feature{
+  text-align:center;
+  padding:30px 10px;
+  cursor:pointer;
+}
+
+.feature .icon{
+  font-size:55px;
+  margin-bottom:15px;
+}
+
+.feature h3{
+  color:#0757a5;
+  font-size:24px;
+}
+
+h2{
+  color:#0757a5;
+  margin-bottom:20px;
+}
+
+label{
+  display:block;
+  font-size:18px;
+  font-weight:bold;
+  margin:16px 0 7px;
+}
+
+input,textarea{
+  width:100%;
+  border:2px solid #d2d9e2;
+  border-radius:14px;
+  padding:16px;
+  font-size:17px;
+  outline:none;
+}
+
+input:focus,textarea:focus{
+  border-color:#168de2;
+}
+
+textarea{
+  min-height:110px;
+  resize:vertical;
+}
+
+.submit{
+  width:100%;
+  margin-top:20px;
+  border:0;
+  border-radius:14px;
+  padding:17px;
+  background:#ff8500;
+  color:white;
+  font-size:20px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.search{
+  background:#eef6ff;
+  border-color:#cfe3fa;
+  margin-bottom:18px;
+}
+
+.job{
+  border:2px solid #e1e6eb;
+  border-radius:18px;
+  padding:20px;
+  margin-bottom:16px;
+}
+
+.job h3{
+  color:#0757a5;
+  font-size:23px;
+  margin-bottom:10px;
+}
+
+.job p{
+  font-size:17px;
+  margin:7px 0;
+  line-height:1.5;
+}
+
+.badge{
+  display:inline-block;
+  background:#e7f8ee;
+  color:#16834b;
+  padding:7px 12px;
+  border-radius:20px;
+  font-weight:bold;
+  margin:6px 0;
+}
+
+.apply{
+  display:block;
+  width:100%;
+  border:0;
+  border-radius:12px;
+  padding:13px;
+  margin-top:12px;
+  background:#25d366;
+  color:white;
+  text-align:center;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.delete{
+  margin-top:10px;
+  padding:10px 15px;
+  border:0;
+  border-radius:10px;
+  background:#dc2626;
+  color:white;
+}
+
+.notice{
+  background:#fff7df;
+  border-left:5px solid #ff9800;
+  padding:15px;
+  border-radius:10px;
+  line-height:1.6;
+}
+
+.bottom{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:white;
+  padding:10px;
+  display:flex;
+  gap:15px;
+  box-shadow:0 -3px 15px #0002;
+  z-index:20;
+}
+
+.bottom a{
+  flex:1;
+  text-align:center;
+  color:white;
+  text-decoration:none;
+  padding:16px 5px;
+  border-radius:15px;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.call{
+  background:#159db5;
+}
+
+.whatsapp{
+  background:#20c968;
+}
+
+footer{
+  background:#07578f;
+  color:white;
+  text-align:center;
+  padding:25px;
+  margin-top:20px;
+}
+
+.hidden{
+  display:none !important;
+}
+
+@media(max-width:600px){
+  header h1{
+    font-size:31px;
+  }
+
+  header p{
+    font-size:17px;
+  }
+
+  .buttons{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    padding:22px;
+  }
+
+  .welcome h2{
+    font-size:27px;
+  }
+}
 </style>
 </head>
+
 <body>
-<header><h1>🚀 Ravi JobMitra</h1><p>नौकरी और कर्मचारी जोड़ने का आसान प्लेटफॉर्म</p></header>
+
+<header>
+  <h1>🚀 RK JOB MITRA</h1>
+  <p>नौकरी ढूंढने वालों और काम देने वालों को जोड़ने का आसान प्लेटफॉर्म</p>
+</header>
+
+<nav>
+  <button id="homeBtn" class="active" onclick="showPage('home')">Home</button>
+  <button id="jobsBtn" onclick="showPage('jobs')">Jobs</button>
+  <button id="seekerBtn" onclick="showPage('seeker')">Job Seeker</button>
+</nav>
+
 <main>
-<section class="card"><h2>आपको क्या चाहिए?</h2><div class="buttons">
-<a class="btn worker" href="#job">👷 मुझे काम चाहिए</a>
-<a class="btn employer" href="#employee">🏢 मुझे कर्मचारी चाहिए</a>
-</div></section>
 
-<section class="card" id="job"><h2>👷 नौकरी खोजें</h2>
-<input class="search" id="search" oninput="filterJobs()" placeholder="🔎 काम, शहर या वेतन खोजें">
-<div class="jobs" id="jobList" style="margin-top:14px"></div>
-<div id="noJobs" class="notice hidden">इस खोज के अनुसार अभी कोई नौकरी नहीं मिली।</div>
+<!-- HOME -->
+<section id="home" class="page">
+
+  <div class="card welcome">
+    <h2>RK JOB MITRA में स्वागत है</h2>
+    <p>
+      यहाँ आप नौकरी खोज सकते हैं और कंपनियों,
+      दुकानों या ठेकेदारों के लिए स्टाफ ढूंढ सकते हैं।
+    </p>
+  </div>
+
+  <div class="buttons">
+
+    <button class="bigbtn worker" onclick="showPage('jobs')">
+      👷 मुझे काम चाहिए
+    </button>
+
+    <button class="bigbtn employer" onclick="showPage('post')">
+      🏢 मुझे कर्मचारी चाहिए
+    </button>
+
+  </div>
+
+  <div class="buttons">
+
+    <div class="card feature" onclick="showPage('jobs')">
+      <div class="icon">🔍</div>
+      <h3>नौकरी खोजें</h3>
+    </div>
+
+    <div class="card feature" onclick="showPage('seeker')">
+      <div class="icon">📄</div>
+      <h3>नौकरी के लिए रजिस्टर करें</h3>
+    </div>
+
+  </div>
+
+  <div class="card feature" onclick="showPage('post')">
+    <div class="icon">🏢</div>
+    <h3>कर्मचारी खोजें / Job Post करें</h3>
+  </div>
+
+  <div class="card">
+    <h2>💬 हमसे संपर्क करें</h2>
+    <p style="font-size:18px;line-height:1.7;">
+      नौकरी या कर्मचारी की जानकारी के लिए
+      सीधे WhatsApp या Call करें।
+    </p>
+  </div>
+
 </section>
 
-<section class="card" id="employee"><h2>🏢 कर्मचारी चाहिए</h2>
-<form onsubmit="postJob(event)">
-<label>नाम / कंपनी</label><input id="company" required placeholder="नाम या कंपनी का नाम">
-<label>मोबाइल नंबर</label><input id="phone" required type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10 अंकों का नंबर">
-<label>काम</label><input id="role" required placeholder="जैसे Driver, Helper, Salesman">
-<label>शहर</label><input id="city" required placeholder="काम का शहर">
-<label>वेतन</label><input id="salary" placeholder="जैसे ₹15,000 महीना">
-<label>काम की जानकारी</label><textarea id="details" placeholder="काम का समय, अनुभव आदि"></textarea>
-<button class="submit">📢 Job Post करें</button>
-</form></section>
 
-<section class="card"><h2>📋 आपकी पोस्ट की गई Jobs</h2><div id="myPosts"></div></section>
+<!-- JOBS -->
+<section id="jobs" class="page hidden">
 
-<section class="card"><h2>📞 Ravi JobMitra से संपर्क</h2>
-<p>नौकरी या कर्मचारी की जानकारी के लिए WhatsApp पर संदेश भेजें।</p>
-<a class="whatsapp" target="_blank" href="https://wa.me/917224078224?text=Namaste%20Ravi%20JobMitra%2C%20mujhe%20job%20ki%20jaankari%20chahiye.">💬 WhatsApp पर संपर्क करें</a>
+  <div class="card">
+    <h2>👷 नौकरी खोजें</h2>
+
+    <input
+      class="search"
+      id="search"
+      type="text"
+      placeholder="🔎 काम, शहर या वेतन खोजें..."
+      oninput="displayJobs()"
+    >
+
+    <div id="jobList"></div>
+
+    <div id="noJobs" class="notice hidden">
+      अभी कोई नौकरी नहीं मिली।
+    </div>
+  </div>
+
 </section>
+
+
+<!-- POST JOB -->
+<section id="post" class="page hidden">
+
+  <div class="card">
+
+    <h2>🏢 कर्मचारी चाहिए</h2>
+
+    <form onsubmit="postJob(event)">
+
+      <label>नाम / कंपनी</label>
+      <input
+        id="company"
+        type="text"
+        placeholder="नाम या कंपनी का नाम"
+        required
+      >
+
+      <label>मोबाइल नंबर</label>
+      <input
+        id="phone"
+        type="tel"
+        maxlength="10"
+        placeholder="10 अंकों का नंबर"
+        required
+      >
+
+      <label>काम</label>
+      <input
+        id="role"
+        type="text"
+        placeholder="जैसे Driver, Helper, Salesman"
+        required
+      >
+
+      <label>शहर</label>
+      <input
+        id="city"
+        type="text"
+        placeholder="काम का शहर"
+        required
+      >
+
+      <label>वेतन</label>
+      <input
+        id="salary"
+        type="text"
+        placeholder="जैसे ₹15,000 महीना"
+        required
+      >
+
+      <label>काम की जानकारी</label>
+      <textarea
+        id="details"
+        placeholder="काम का समय, अनुभव आदि"
+      ></textarea>
+
+      <button class="submit" type="submit">
+        📢 Job Post करें
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- JOB SEEKER -->
+<section id="seeker" class="page hidden">
+
+  <div class="card">
+
+    <h2>👷 नौकरी के लिए रजिस्टर करें</h2>
+
+    <label>आपका नाम</label>
+    <input id="seekerName" placeholder="पूरा नाम">
+
+    <label>मोबाइल नंबर</label>
+    <input id="seekerPhone" type="tel" maxlength="10" placeholder="10 अंकों का नंबर">
+
+    <label>आप कौन सा काम चाहते हैं?</label>
+    <input id="seekerWork" placeholder="जैसे Driver, Helper, Salesman">
+
+    <label>आपका शहर</label>
+    <input id="seekerCity" placeholder="शहर">
+
+    <label>अनुभव</label>
+    <input id="seekerExperience" placeholder="जैसे 2 साल">
+
+    <button class="submit" onclick="registerSeeker()">
+      📝 Register करें
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- SUCCESS -->
+<section id="success" class="page hidden">
+
+  <div class="card welcome">
+
+    <h2>✅ जानकारी भेज दी गई</h2>
+
+    <p>
+      आपकी जानकारी तैयार है।
+      नीचे दिए गए WhatsApp बटन से RK JOB MITRA को भेज सकते हैं।
+    </p>
+
+    <br>
+
+    <a
+      id="successWhatsapp"
+      class="apply"
+      target="_blank"
+      href="#"
+    >
+      💬 WhatsApp पर भेजें
+    </a>
+
+  </div>
+
+</section>
+
 </main>
-<footer><b>Ravi JobMitra</b><br>नौकरी और कर्मचारी सेवा<br>© 2026</footer>
+
+
+<footer>
+  <b>RK JOB MITRA</b>
+  <br><br>
+  नौकरी और कर्मचारी जोड़ने का आसान प्लेटफॉर्म
+</footer>
+
+
+<!-- BOTTOM CONTACT -->
+<div class="bottom">
+
+  <a
+    class="call"
+    href="tel:+917224078224"
+  >
+    📞 Call / नंबर
+  </a>
+
+  <a
+    class="whatsapp"
+    target="_blank"
+    href="https://wa.me/917224078224?text=Namaste%20RK%20JOB%20MITRA"
+  >
+    💬 WhatsApp
+  </a>
+
+</div>
+
 
 <script>
-const WA="917224078224";
-const defaultJobs=[
-{role:"Driver",city:"अपने शहर में",salary:"कंपनी के अनुसार",details:"ड्राइविंग का काम"},
-{role:"Electrician",city:"अपने शहर में",salary:"कंपनी के अनुसार",details:"इलेक्ट्रिशियन की जरूरत"},
-{role:"Helper",city:"अपने शहर में",salary:"₹12,000+ / महीना",details:"फुल टाइम काम"},
-{role:"Salesman",city:"अपने शहर में",salary:"₹15,000+ / महीना",details:"दुकान/कंपनी में काम"}];
 
-function getPosts(){try{return JSON.parse(localStorage.getItem("raviJobMitraJobs")||"[]")}catch(e){return[]}}
-function savePosts(p){localStorage.setItem("raviJobMitraJobs",JSON.stringify(p))}
-function allJobs(){return[...getPosts(),...defaultJobs]}
-function esc(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+const ADMIN_WHATSAPP = "917224078224";
 
-function renderJobs(list=allJobs()){
-let box=document.getElementById("jobList"),no=document.getElementById("noJobs");box.innerHTML="";
-list.forEach((j,i)=>{let d=document.createElement("div");d.className="job";
-d.innerHTML=`<h3>💼 ${esc(j.role)}</h3><span class="badge">📍 ${esc(j.city)}</span>
-<p>💰 <b>${esc(j.salary||"जानकारी नहीं")}</b></p><p>${esc(j.details||"काम की जानकारी के लिए संपर्क करें।")}</p>
-<button onclick="applyJob(${i})">📲 Apply / संपर्क</button>`;box.appendChild(d)});
-no.classList.toggle("hidden",list.length!==0)
+
+// शुरुआती Jobs
+const defaultJobs = [
+  {
+    company:"RK Job Mitra",
+    phone:"7224078224",
+    role:"Salesman",
+    city:"Indore",
+    salary:"₹15,000 महीना",
+    details:"समय 12 से 8"
+  },
+  {
+    company:"RK Job Mitra",
+    phone:"7224078224",
+    role:"Driver",
+    city:"अपने शहर में",
+    salary:"कंपनी के अनुसार",
+    details:"ड्राइविंग का काम"
+  }
+];
+
+
+// Jobs को फोन में save करना
+function getJobs(){
+
+  let jobs = localStorage.getItem("rk_jobs");
+
+  if(!jobs){
+    localStorage.setItem(
+      "rk_jobs",
+      JSON.stringify(defaultJobs)
+    );
+
+    return defaultJobs;
+  }
+
+  return JSON.parse(jobs);
 }
-function filterJobs(){let q=document.getElementById("search").value.toLowerCase().trim();
-renderJobs(allJobs().filter(j=>[j.role,j.city,j.salary,j.details,j.company].join(" ").toLowerCase().includes(q)))}
 
-function postJob(e){
-e.preventDefault();
-let j={company:company.value.trim(),phone:phone.value.trim(),role:role.value.trim(),city:city.value.trim(),
-salary:salary.value.trim()||"वेतन बातचीत के अनुसार",details:details.value.trim()||"कृपया संपर्क करें।"};
-let p=getPosts();p.unshift(j);savePosts(p);renderJobs();renderMyPosts();e.target.reset();
-if(confirm("Job पोस्ट हो गई है। क्या इसे WhatsApp पर भी भेजना है?")){
-let msg=`*Ravi JobMitra - नई Job Post*%0A%0A🏢 नाम/कंपनी: ${j.company}%0A📱 मोबाइल: ${j.phone}%0A💼 काम: ${j.role}%0A📍 शहर: ${j.city}%0A💰 वेतन: ${j.salary}%0A📝 जानकारी: ${j.details}`;
-window.open("https://wa.me/"+WA+"?text="+msg,"_blank")}
-location.hash="job"
+
+// Page बदलना
+function showPage(page){
+
+  document.querySelectorAll(".page").forEach(function(p){
+    p.classList.add("hidden");
+  });
+
+  document.getElementById(page).classList.remove("hidden");
+
+  document.querySelectorAll("nav button").forEach(function(btn){
+    btn.classList.remove("active");
+  });
+
+  if(page === "home"){
+    document.getElementById("homeBtn").classList.add("active");
+  }
+
+  if(page === "jobs"){
+    document.getElementById("jobsBtn").classList.add("active");
+    displayJobs();
+  }
+
+  if(page === "seeker"){
+    document.getElementById("seekerBtn").classList.add("active");
+  }
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 }
-function applyJob(i){let j=allJobs()[i];
-let msg=`Namaste Ravi JobMitra,%0A%0Aमुझे इस Job में interest है।%0A💼 Job: ${j.role}%0A📍 शहर: ${j.city}%0A💰 Salary: ${j.salary}`;
-window.open("https://wa.me/"+WA+"?text="+msg,"_blank")}
-function renderMyPosts(){let b=document.getElementById("myPosts"),p=getPosts();
-if(!p.length){b.innerHTML="<p>अभी आपने कोई Job Post नहीं की है।</p>";return}
-b.innerHTML=p.map((j,i)=>`<div class="job" style="margin-bottom:10px"><h3>💼 ${esc(j.role)}</h3>
-<p>🏢 ${esc(j.company)} • 📍 ${esc(j.city)}</p><p>💰 ${esc(j.salary)}</p>
-<button onclick="sendAgain(${i})">📲 WhatsApp</button> <button onclick="delPost(${i})">🗑️ हटाएँ</button></div>`).join("")}
-function sendAgain(i){let j=getPosts()[i];
-let msg=`*Ravi JobMitra - Job Post*%0A%0A🏢 नाम/कंपनी: ${j.company}%0A📱 मोबाइल: ${j.phone}%0A💼 काम: ${j.role}%0A📍 शहर: ${j.city}%0A💰 वेतन: ${j.salary}%0A📝 जानकारी: ${j.details}`;
-window.open("https://wa.me/"+WA+"?text="+msg,"_blank")}
-function delPost(i){let p=getPosts();p.splice(i,1);savePosts(p);renderJobs();renderMyPosts()}
-renderJobs();renderMyPosts();
+
+
+// Jobs दिखाना
+function displayJobs(){
+
+  const list = document.getElementById("jobList");
+  const noJobs = document.getElementById("noJobs");
+
+  const searchText =
+    document.getElementById("search").value.toLowerCase().trim();
+
+  const jobs = getJobs();
+
+  const filtered = jobs.filter(function(job){
+
+    return (
+      job.company.toLowerCase().includes(searchText) ||
+      job.role.toLowerCase().includes(searchText) ||
+      job.city.toLowerCase().includes(searchText) ||
+      job.salary.toLowerCase().includes(searchText) ||
+      job.details.toLowerCase().includes(searchText)
+    );
+
+  });
+
+  list.innerHTML = "";
+
+  if(filtered.length === 0){
+
+    noJobs.classList.remove("hidden");
+    return;
+
+  }
+
+  noJobs.classList.add("hidden");
+
+
+  filtered.forEach(function(job,index){
+
+    const message =
+      "नमस्ते RK JOB MITRA, मुझे इस नौकरी में रुचि है।%0A%0A" +
+      "काम: " + job.role + "%0A" +
+      "शहर: " + job.city + "%0A" +
+      "कंपनी: " + job.company;
+
+    const div = document.createElement("div");
+
+    div.className = "job";
+
+    div.innerHTML = `
+      <h3>💼 ${escapeHTML(job.role)}</h3>
+
+      <span class="badge">
+        📍 ${escapeHTML(job.city)}
+      </span>
+
+      <p>🏢 <b>कंपनी:</b> ${escapeHTML(job.company)}</p>
+
+      <p>💰 <b>वेतन:</b> ${escapeHTML(job.salary)}</p>
+
+      <p>📝 ${escapeHTML(job.details)}</p>
+
+      <a
+        class="apply"
+        target="_blank"
+        href="https://wa.me/${ADMIN_WHATSAPP}?text=${message}"
+      >
+        💬 इस Job के लिए WhatsApp करें
+      </a>
+    `;
+
+    list.appendChild(div);
+
+  });
+
+}
+
+
+// Job Post करना
+function postJob(event){
+
+  event.preventDefault();
+
+  const company =
+    document.getElementById("company").value.trim();
+
+  const phone =
+    document.getElementById("phone").value.trim();
+
+  const role =
+    document.getElementById("role").value.trim();
+
+  const city =
+    document.getElementById("city").value.trim();
+
+  const salary =
+    document.getElementById("salary").value.trim();
+
+  const details =
+    document.getElementById("details").value.trim();
+
+
+  if(phone.length !== 10 || isNaN(phone)){
+
+    alert("कृपया 10 अंकों का सही मोबाइल नंबर डालें।");
+
+    return;
+  }
+
+
+  const job = {
+    company:company,
+    phone:phone,
+    role:role,
+    city:city,
+    salary:salary,
+    details:details || "कोई अतिरिक्त जानकारी नहीं"
+  };
+
+
+  const jobs = getJobs();
+
+  jobs.unshift(job);
+
+  localStorage.setItem(
+    "rk_jobs",
+    JSON.stringify(jobs)
+  );
+
+
+  const message =
+    "📢 RK JOB MITRA - नई Job Post%0A%0A" +
+    "🏢 नाम/कंपनी: " + company + "%0A" +
+    "📱 मोबाइल: " + phone + "%0A" +
+    "💼 काम: " + role + "%0A" +
+    "📍 शहर: " + city + "%0A" +
+    "💰 वेतन: " + salary + "%0A" +
+    "📝 जानकारी: " + details;
+
+
+  document.getElementById("successWhatsapp").href =
+    "https://wa.me/" + ADMIN_WHATSAPP + "?text=" + message;
+
+
+  event.target.reset();
+
+  showPage("success");
+
+}
+
+
+// Job Seeker Registration
+function registerSeeker(){
+
+  const name =
+    document.getElementById("seekerName").value.trim();
+
+  const phone =
+    document.getElementById("seekerPhone").value.trim();
+
+  const work =
+    document.getElementById("seekerWork").value.trim();
+
+  const city =
+    document.getElementById("seekerCity").value.trim();
+
+  const experience =
+    document.getElementById("seekerExperience").value.trim();
+
+
+  if(!name || !phone || !work || !city){
+
+    alert("कृपया सभी जरूरी जानकारी भरें।");
+
+    return;
+  }
+
+
+  if(phone.length !== 10 || isNaN(phone)){
+
+    alert("कृपया 10 अंकों का सही मोबाइल नंबर डालें।");
+
+    return;
+  }
+
+
+  const message =
+    "👷 RK JOB MITRA - Job Seeker Registration%0A%0A" +
+    "👤 नाम: " + name + "%0A" +
+    "📱 मोबाइल: " + phone + "%0A" +
+    "💼 काम चाहिए: " + work + "%0A" +
+    "📍 शहर: " + city + "%0A" +
+    "🎓 अनुभव: " + (experience || "नहीं बताया");
+
+
+  window.open(
+    "https://wa.me/" + ADMIN_WHATSAPP + "?text=" + message,
+    "_blank"
+  );
+
+}
+
+
+// HTML सुरक्षित करना
+function escapeHTML(text){
+
+  return String(text)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+// पहली बार Jobs दिखाना
+displayJobs();
+
 </script>
+
 </body>
 </html>
