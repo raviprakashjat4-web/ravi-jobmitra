@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobMitra - नौकरी और कर्मचारी सेवा</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#f4f7fb;
+  color:#222;
+}
+
+header{
+  background:#087a43;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+
+header h1{
+  font-size:32px;
+}
+
+header p{
+  margin-top:8px;
+  font-size:16px;
+}
+
+.container{
+  max-width:600px;
+  margin:25px auto;
+  padding:15px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  margin-bottom:20px;
+  border-radius:15px;
+  box-shadow:0 3px 12px #0002;
+}
+
+.card h2{
+  color:#087a43;
+  margin-bottom:15px;
+}
+
+input,select,textarea{
+  width:100%;
+  padding:13px;
+  margin:7px 0;
+  border:1px solid #bbb;
+  border-radius:8px;
+  font-size:16px;
+}
+
+button,.whatsapp{
+  display:block;
+  width:100%;
+  padding:14px;
+  margin-top:10px;
+  border:0;
+  border-radius:10px;
+  color:white;
+  font-size:18px;
+  font-weight:bold;
+  background:#087a43;
+  text-align:center;
+  text-decoration:none;
+}
+
+.blue{
+  background:#1769e0;
+}
+
+.whatsapp{
+  background:#25D366;
+}
+
+footer{
+  text-align:center;
+  background:#222;
+  color:white;
+  padding:20px;
+  margin-top:20px;
+}
+
+.small{
+  font-size:14px;
+  color:#666;
+  margin-top:8px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🧑‍💼 JobMitra</h1>
+  <p>नौकरी पाने और कर्मचारी खोजने का आसान तरीका</p>
+</header>
+
+<div class="container">
+
+<!-- Worker Form -->
+<div class="card">
+<h2>👷 मुझे काम चाहिए</h2>
+
+<input id="name" type="text" placeholder="आपका नाम">
+
+<input id="mobile" type="tel" placeholder="मोबाइल नंबर">
+
+<select id="work">
+<option value="">काम चुनें</option>
+<option>Driver</option>
+<option>Delivery Boy</option>
+<option>Security Guard</option>
+<option>Helper</option>
+<option>Electrician</option>
+<option>Plumber</option>
+<option>Painter</option>
+<option>Construction Worker</option>
+<option>Hotel Worker</option>
+<option>Factory Worker</option>
+<option>अन्य</option>
+</select>
+
+<button onclick="worker()">WhatsApp पर नौकरी की जानकारी भेजें</button>
+
+<p class="small">अपनी जानकारी भरकर WhatsApp पर भेजें।</p>
+</div>
+
+
+<!-- Employer Form -->
+<div class="card">
+<h2>🏢 मुझे कर्मचारी चाहिए</h2>
+
+<input id="company" type="text" placeholder="कंपनी / दुकान का नाम">
+
+<input id="job" type="text" placeholder="किस काम के लिए कर्मचारी चाहिए?">
+
+<button class="blue" onclick="employer()">कर्मचारी की जरूरत भेजें</button>
+</div>
+
+
+<!-- WhatsApp Direct -->
+<div class="card">
+<h2>📞 JobMitra से संपर्क करें</h2>
+
+<a class="whatsapp"
+href="https://wa.me/917224078224?text=Namaste%20JobMitra%2C%20mujhe%20kaam%20ke%20baare%20mein%20jaankari%20chahiye."
+target="_blank">
+💬 WhatsApp पर संपर्क करें
+</a>
+</div>
+
+</div>
+
+<footer>
+  <p>© 2026 JobMitra</p>
+  <p>नौकरी और कर्मचारी सेवा</p>
+</footer>
+
+
+<script>
+
+function worker(){
+
+  let name=document.getElementById("name").value;
+  let mobile=document.getElementById("mobile").value;
+  let work=document.getElementById("work").value;
+
+  if(name==="" || mobile==="" || work===""){
+    alert("कृपया नाम, मोबाइल और काम भरें!");
+    return;
+  }
+
+  let message =
+  "नमस्ते JobMitra!%0A%0A" +
+  "👷 मुझे काम चाहिए%0A" +
+  "नाम: " + encodeURIComponent(name) + "%0A" +
+  "मोबाइल: " + encodeURIComponent(mobile) + "%0A" +
+  "काम: " + encodeURIComponent(work);
+
+  window.open(
+    "https://wa.me/917224078224?text=" + message,
+    "_blank"
+  );
+}
+
+
+function employer(){
+
+  let company=document.getElementById("company").value;
+  let job=document.getElementById("job").value;
+
+  if(company==="" || job===""){
+    alert("कृपया कंपनी/दुकान और काम भरें!");
+    return;
+  }
+
+  let message =
+  "नमस्ते JobMitra!%0A%0A" +
+  "🏢 मुझे कर्मचारी चाहिए%0A" +
+  "कंपनी/दुकान: " +
+  encodeURIComponent(company) + "%0A" +
+  "काम: " +
+  encodeURIComponent(job);
+
+  window.open(
+    "https://wa.me/917224078224?text=" + message,
+    "_blank"
+  );
+}
+
+</script>
+
+</body>
+</html>
