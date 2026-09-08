@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JobMitra - नौकरी और कर्मचारी सेवा</title>
+
+<title>Ravi JobMitra - नौकरी और कर्मचारी सेवा</title>
 
 <style>
 *{
@@ -14,89 +15,117 @@
 }
 
 body{
-  background:#f4f7fb;
+  background:#f1f5f9;
   color:#222;
 }
 
 header{
-  background:#087a43;
+  background:linear-gradient(135deg,#075bd7,#12a9e8);
   color:white;
-  padding:20px;
   text-align:center;
+  padding:35px 18px;
 }
 
 header h1{
-  font-size:32px;
+  font-size:34px;
+  margin-bottom:12px;
 }
 
 header p{
-  margin-top:8px;
-  font-size:16px;
+  font-size:18px;
+  line-height:1.5;
 }
 
 .container{
-  max-width:600px;
-  margin:25px auto;
-  padding:15px;
+  max-width:650px;
+  margin:auto;
+  padding:20px;
 }
 
 .card{
   background:white;
-  padding:20px;
+  border-radius:20px;
+  padding:24px;
   margin-bottom:20px;
-  border-radius:15px;
-  box-shadow:0 3px 12px #0002;
+  box-shadow:0 5px 20px #00000012;
 }
 
-.card h2{
-  color:#087a43;
-  margin-bottom:15px;
+h2{
+  color:#075bd7;
+  margin-bottom:18px;
+}
+
+button{
+  width:100%;
+  border:0;
+  border-radius:12px;
+  padding:16px;
+  margin-top:12px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.jobBtn{
+  background:#16a34a;
+  color:white;
+}
+
+.employeeBtn{
+  background:#075bd7;
+  color:white;
+}
+
+.whatsapp{
+  background:#25d366;
+  color:white;
 }
 
 input,select,textarea{
   width:100%;
-  padding:13px;
-  margin:7px 0;
-  border:1px solid #bbb;
-  border-radius:8px;
+  padding:14px;
+  margin:8px 0 14px;
+  border:1px solid #ccc;
+  border-radius:10px;
   font-size:16px;
 }
 
-button,.whatsapp{
-  display:block;
-  width:100%;
-  padding:14px;
-  margin-top:10px;
-  border:0;
-  border-radius:10px;
-  color:white;
-  font-size:18px;
+textarea{
+  min-height:100px;
+}
+
+label{
   font-weight:bold;
-  background:#087a43;
-  text-align:center;
-  text-decoration:none;
 }
 
-.blue{
-  background:#1769e0;
-}
-
-.whatsapp{
-  background:#25D366;
+.info{
+  background:#eff6ff;
+  padding:16px;
+  border-radius:12px;
+  margin-top:15px;
+  line-height:1.6;
 }
 
 footer{
   text-align:center;
-  background:#222;
+  background:#111827;
   color:white;
-  padding:20px;
+  padding:25px;
   margin-top:20px;
+  line-height:1.8;
 }
 
-.small{
-  font-size:14px;
-  color:#666;
-  margin-top:8px;
+.hidden{
+  display:none;
+}
+
+.success{
+  background:#dcfce7;
+  color:#166534;
+  padding:15px;
+  border-radius:10px;
+  margin-top:15px;
+  display:none;
 }
 </style>
 </head>
@@ -104,119 +133,216 @@ footer{
 <body>
 
 <header>
-  <h1>🧑‍💼 JobMitra</h1>
-  <p>नौकरी पाने और कर्मचारी खोजने का आसान तरीका</p>
+  <h1>🚀 Ravi JobMitra</h1>
+  <p>नौकरी ढूँढने वालों और कर्मचारी खोजने वालों को जोड़ने का आसान प्लेटफॉर्म</p>
 </header>
 
 <div class="container">
 
-<!-- Worker Form -->
 <div class="card">
+<h2>आपको क्या चाहिए?</h2>
+
+<button class="jobBtn" onclick="showJob()">
+👷 मुझे काम चाहिए
+</button>
+
+<button class="employeeBtn" onclick="showEmployee()">
+🏢 मुझे कर्मचारी चाहिए
+</button>
+</div>
+
+
+<!-- JOB FORM -->
+
+<div class="card hidden" id="jobForm">
+
 <h2>👷 मुझे काम चाहिए</h2>
 
-<input id="name" type="text" placeholder="आपका नाम">
+<label>नाम</label>
+<input id="jobName" placeholder="अपना नाम">
 
-<input id="mobile" type="tel" placeholder="मोबाइल नंबर">
+<label>मोबाइल नंबर</label>
+<input id="jobMobile" type="tel" placeholder="10 अंकों का नंबर">
 
-<select id="work">
-<option value="">काम चुनें</option>
-<option>Driver</option>
-<option>Delivery Boy</option>
-<option>Security Guard</option>
-<option>Helper</option>
-<option>Electrician</option>
-<option>Plumber</option>
-<option>Painter</option>
-<option>Construction Worker</option>
-<option>Hotel Worker</option>
-<option>Factory Worker</option>
-<option>अन्य</option>
+<label>काम</label>
+<input id="jobWork" placeholder="जैसे Driver, Helper, Electrician">
+
+<label>शहर / गाँव</label>
+<input id="jobCity" placeholder="अपना शहर या गाँव">
+
+<label>अनुभव</label>
+<select id="jobExperience">
+<option>कोई अनुभव नहीं</option>
+<option>1 साल</option>
+<option>2 साल</option>
+<option>3 साल</option>
+<option>5 साल या अधिक</option>
 </select>
 
-<button onclick="worker()">WhatsApp पर नौकरी की जानकारी भेजें</button>
+<button class="whatsapp" onclick="sendJob()">
+📲 WhatsApp पर काम की जानकारी भेजें
+</button>
 
-<p class="small">अपनी जानकारी भरकर WhatsApp पर भेजें।</p>
+<div class="success" id="jobSuccess">
+आपकी जानकारी तैयार है। WhatsApp खुल रहा है।
+</div>
+
 </div>
 
 
-<!-- Employer Form -->
-<div class="card">
+<!-- EMPLOYEE FORM -->
+
+<div class="card hidden" id="employeeForm">
+
 <h2>🏢 मुझे कर्मचारी चाहिए</h2>
 
-<input id="company" type="text" placeholder="कंपनी / दुकान का नाम">
+<label>कंपनी / दुकान का नाम</label>
+<input id="company" placeholder="कंपनी या दुकान का नाम">
 
-<input id="job" type="text" placeholder="किस काम के लिए कर्मचारी चाहिए?">
+<label>मोबाइल नंबर</label>
+<input id="companyMobile" type="tel" placeholder="10 अंकों का नंबर">
 
-<button class="blue" onclick="employer()">कर्मचारी की जरूरत भेजें</button>
+<label>किस कर्मचारी की जरूरत है?</label>
+<input id="employeeWork" placeholder="जैसे Driver, Helper, Salesman">
+
+<label>कितने कर्मचारी चाहिए?</label>
+<input id="employeeCount" type="number" placeholder="संख्या">
+
+<label>स्थान</label>
+<input id="employeeCity" placeholder="काम की जगह">
+
+<label>वेतन</label>
+<input id="salary" placeholder="जैसे ₹12,000 - ₹18,000">
+
+<button class="whatsapp" onclick="sendEmployee()">
+📲 WhatsApp पर कर्मचारी की जरूरत भेजें
+</button>
+
+<div class="success" id="employeeSuccess">
+जानकारी तैयार है। WhatsApp खुल रहा है।
+</div>
+
 </div>
 
 
-<!-- WhatsApp Direct -->
 <div class="card">
-<h2>📞 JobMitra से संपर्क करें</h2>
+<h2>ℹ️ Ravi JobMitra कैसे काम करता है?</h2>
 
-<a class="whatsapp"
-href="https://wa.me/917224078224?text=Namaste%20JobMitra%2C%20mujhe%20kaam%20ke%20baare%20mein%20jaankari%20chahiye."
-target="_blank">
-💬 WhatsApp पर संपर्क करें
-</a>
+<div class="info">
+<b>1️⃣ नौकरी चाहिए?</b><br>
+अपनी जानकारी भरें और हमें भेजें।
+<br><br>
+
+<b>2️⃣ कर्मचारी चाहिए?</b><br>
+अपनी जरूरत बताएं।
+<br><br>
+
+<b>3️⃣ संपर्क</b><br>
+हम नौकरी चाहने वालों और काम देने वालों को जोड़ने में मदद करेंगे।
+</div>
 </div>
 
 </div>
+
 
 <footer>
-  <p>© 2026 JobMitra</p>
-  <p>नौकरी और कर्मचारी सेवा</p>
+<b>🚀 Ravi JobMitra</b><br>
+नौकरी और कर्मचारी सेवा<br>
+© 2026 Ravi JobMitra
 </footer>
 
 
 <script>
 
-function worker(){
+/* अपना WhatsApp नंबर यहाँ डालें */
+const whatsappNumber = "919999999999";
 
-  let name=document.getElementById("name").value;
-  let mobile=document.getElementById("mobile").value;
-  let work=document.getElementById("work").value;
 
-  if(name==="" || mobile==="" || work===""){
-    alert("कृपया नाम, मोबाइल और काम भरें!");
+function showJob(){
+
+  document.getElementById("jobForm").classList.remove("hidden");
+
+  document.getElementById("employeeForm").classList.add("hidden");
+
+  window.scrollTo({
+    top:document.getElementById("jobForm").offsetTop-20,
+    behavior:"smooth"
+  });
+}
+
+
+function showEmployee(){
+
+  document.getElementById("employeeForm").classList.remove("hidden");
+
+  document.getElementById("jobForm").classList.add("hidden");
+
+  window.scrollTo({
+    top:document.getElementById("employeeForm").offsetTop-20,
+    behavior:"smooth"
+  });
+}
+
+
+function sendJob(){
+
+  let name=document.getElementById("jobName").value;
+  let mobile=document.getElementById("jobMobile").value;
+  let work=document.getElementById("jobWork").value;
+  let city=document.getElementById("jobCity").value;
+  let experience=document.getElementById("jobExperience").value;
+
+  if(!name || !mobile || !work || !city){
+
+    alert("कृपया सभी जरूरी जानकारी भरें।");
     return;
   }
 
-  let message =
-  "नमस्ते JobMitra!%0A%0A" +
-  "👷 मुझे काम चाहिए%0A" +
-  "नाम: " + encodeURIComponent(name) + "%0A" +
-  "मोबाइल: " + encodeURIComponent(mobile) + "%0A" +
-  "काम: " + encodeURIComponent(work);
+  let message=
+  "🚀 Ravi JobMitra - मुझे काम चाहिए%0A%0A"+
+  "नाम: "+name+"%0A"+
+  "मोबाइल: "+mobile+"%0A"+
+  "काम: "+work+"%0A"+
+  "स्थान: "+city+"%0A"+
+  "अनुभव: "+experience;
+
+  document.getElementById("jobSuccess").style.display="block";
 
   window.open(
-    "https://wa.me/917224078224?text=" + message,
+    "https://wa.me/"+whatsappNumber+"?text="+message,
     "_blank"
   );
 }
 
 
-function employer(){
+function sendEmployee(){
 
   let company=document.getElementById("company").value;
-  let job=document.getElementById("job").value;
+  let mobile=document.getElementById("companyMobile").value;
+  let work=document.getElementById("employeeWork").value;
+  let count=document.getElementById("employeeCount").value;
+  let city=document.getElementById("employeeCity").value;
+  let salary=document.getElementById("salary").value;
 
-  if(company==="" || job===""){
-    alert("कृपया कंपनी/दुकान और काम भरें!");
+  if(!company || !mobile || !work || !count || !city){
+
+    alert("कृपया सभी जरूरी जानकारी भरें।");
     return;
   }
 
-  let message =
-  "नमस्ते JobMitra!%0A%0A" +
-  "🏢 मुझे कर्मचारी चाहिए%0A" +
-  "कंपनी/दुकान: " +
-  encodeURIComponent(company) + "%0A" +
-  "काम: " +
-  encodeURIComponent(job);
+  let message=
+  "🏢 Ravi JobMitra - कर्मचारी चाहिए%0A%0A"+
+  "कंपनी/दुकान: "+company+"%0A"+
+  "मोबाइल: "+mobile+"%0A"+
+  "काम: "+work+"%0A"+
+  "कर्मचारी: "+count+"%0A"+
+  "स्थान: "+city+"%0A"+
+  "वेतन: "+salary;
+
+  document.getElementById("employeeSuccess").style.display="block";
 
   window.open(
-    "https://wa.me/917224078224?text=" + message,
+    "https://wa.me/"+whatsappNumber+"?text="+message,
     "_blank"
   );
 }
