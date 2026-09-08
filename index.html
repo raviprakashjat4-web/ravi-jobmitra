@@ -1,399 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Ravi JobMitra - नौकरी और कर्मचारी सेवा</title>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ravi JobMitra</title>
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-body{
-  font-family:Arial,sans-serif;
-  background:#f1f5f9;
-  color:#222;
-}
-
-header{
-  background:linear-gradient(135deg,#087a43,#087aca);
-  color:white;
-  text-align:center;
-  padding:30px 15px;
-}
-
-header h1{
-  font-size:34px;
-  margin-bottom:8px;
-}
-
-header p{
-  font-size:18px;
-}
-
-.container{
-  max-width:700px;
-  margin:25px auto;
-  padding:0 15px;
-}
-
-.card{
-  background:white;
-  border-radius:24px;
-  padding:25px 20px;
-  margin-bottom:22px;
-  box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-h2{
-  color:#0867c7;
-  font-size:28px;
-  text-align:center;
-  margin-bottom:20px;
-}
-
-.choice{
-  width:100%;
-  border:0;
-  border-radius:18px;
-  padding:20px;
-  margin:12px 0;
-  font-size:21px;
-  font-weight:bold;
-  color:white;
-  cursor:pointer;
-}
-
-.job{
-  background:#16a34a;
-}
-
-.worker{
-  background:#0867d8;
-}
-
-form{
-  display:none;
-}
-
-label{
-  display:block;
-  font-weight:bold;
-  margin:14px 0 6px;
-}
-
-input,
-textarea{
-  width:100%;
-  padding:14px;
-  border:1px solid #cbd5e1;
-  border-radius:12px;
-  font-size:17px;
-}
-
-textarea{
-  min-height:100px;
-}
-
-.submit{
-  width:100%;
-  margin-top:20px;
-  padding:16px;
-  border:0;
-  border-radius:14px;
-  background:#16a34a;
-  color:white;
-  font-size:19px;
-  font-weight:bold;
-}
-
-.back{
-  width:100%;
-  margin-top:10px;
-  padding:13px;
-  border:0;
-  border-radius:14px;
-  background:#e5e7eb;
-  font-size:17px;
-}
-
-.info{
-  background:#eef6ff;
-  border-radius:18px;
-  padding:20px;
-  font-size:18px;
-}
-
-.info p{
-  margin:12px 0;
-}
-
-footer{
-  text-align:center;
-  padding:25px;
-  color:#64748b;
-}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
+header{background:linear-gradient(135deg,#0757d5,#11a8e8);color:#fff;text-align:center;padding:30px 16px}
+h1{margin:0;font-size:32px}header p{margin:10px 0}
+main{max-width:900px;margin:auto;padding:16px}.card{background:#fff;border-radius:18px;padding:20px;margin:16px 0;box-shadow:0 4px 18px #00000012}
+h2{color:#0757d5}.buttons,.jobs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn,.submit,.whatsapp{display:block;width:100%;padding:15px;border:0;border-radius:12px;text-align:center;font-weight:bold;font-size:16px;text-decoration:none;cursor:pointer}
+.worker{background:#16a34a;color:#fff}.employer{background:#0757d5;color:#fff}.submit{margin-top:16px;background:#ff7a00;color:#fff}.whatsapp{background:#25d366;color:#fff;margin-top:10px}
+label{display:block;font-weight:bold;margin:12px 0 6px}input,textarea{width:100%;padding:13px;border:1px solid #ccd3df;border-radius:10px;font-size:16px}textarea{min-height:80px}
+.search{background:#eef5ff;border:2px solid #d8e7ff}.job{padding:16px;border:1px solid #e1e5eb;border-radius:14px}.job h3{margin:0 0 8px;color:#0757d5}
+.badge{display:inline-block;padding:5px 9px;border-radius:20px;background:#e9f7ef;color:#168a45;font-size:13px;font-weight:bold}
+.job button{margin-top:10px;padding:10px 14px;border:0;border-radius:9px;background:#0757d5;color:#fff;font-weight:bold}
+.notice{padding:12px;border-radius:10px;background:#fff7e6;color:#7a4d00;margin-top:12px}.hidden{display:none}
+footer{text-align:center;background:#172033;color:#fff;padding:22px}
+@media(max-width:600px){.buttons,.jobs{grid-template-columns:1fr}h1{font-size:27px}}
 </style>
 </head>
-
 <body>
+<header><h1>🚀 Ravi JobMitra</h1><p>नौकरी और कर्मचारी जोड़ने का आसान प्लेटफॉर्म</p></header>
+<main>
+<section class="card"><h2>आपको क्या चाहिए?</h2><div class="buttons">
+<a class="btn worker" href="#job">👷 मुझे काम चाहिए</a>
+<a class="btn employer" href="#employee">🏢 मुझे कर्मचारी चाहिए</a>
+</div></section>
 
-<header>
-  <h1>Ravi JobMitra</h1>
-  <p>नौकरी और कर्मचारी जोड़ने का आसान प्लेटफॉर्म</p>
-</header>
-
-<div class="container">
-
-<!-- HOME -->
-<section id="home" class="card">
-
-<h2>आपको क्या चाहिए?</h2>
-
-<button class="choice job" onclick="showForm('seeker')">
-👷 मुझे काम चाहिए
-</button>
-
-<button class="choice worker" onclick="showForm('employer')">
-🏢 मुझे कर्मचारी चाहिए
-</button>
-
+<section class="card" id="job"><h2>👷 नौकरी खोजें</h2>
+<input class="search" id="search" oninput="filterJobs()" placeholder="🔎 काम, शहर या वेतन खोजें">
+<div class="jobs" id="jobList" style="margin-top:14px"></div>
+<div id="noJobs" class="notice hidden">इस खोज के अनुसार अभी कोई नौकरी नहीं मिली।</div>
 </section>
 
+<section class="card" id="employee"><h2>🏢 कर्मचारी चाहिए</h2>
+<form onsubmit="postJob(event)">
+<label>नाम / कंपनी</label><input id="company" required placeholder="नाम या कंपनी का नाम">
+<label>मोबाइल नंबर</label><input id="phone" required type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10 अंकों का नंबर">
+<label>काम</label><input id="role" required placeholder="जैसे Driver, Helper, Salesman">
+<label>शहर</label><input id="city" required placeholder="काम का शहर">
+<label>वेतन</label><input id="salary" placeholder="जैसे ₹15,000 महीना">
+<label>काम की जानकारी</label><textarea id="details" placeholder="काम का समय, अनुभव आदि"></textarea>
+<button class="submit">📢 Job Post करें</button>
+</form></section>
 
-<!-- JOB SEEKER -->
-<section id="seeker" class="card" style="display:none">
+<section class="card"><h2>📋 आपकी पोस्ट की गई Jobs</h2><div id="myPosts"></div></section>
 
-<h2>👷 मुझे काम चाहिए</h2>
-
-<form id="seekerForm" onsubmit="sendJob(event)">
-
-<label>पूरा नाम *</label>
-<input id="sname" required placeholder="अपना नाम लिखें">
-
-<label>मोबाइल नंबर *</label>
-<input id="sphone"
-type="tel"
-inputmode="numeric"
-pattern="[0-9]{10}"
-required
-placeholder="10 अंकों का मोबाइल नंबर">
-
-<label>शहर / जिला *</label>
-<input id="scity" required placeholder="जैसे जयपुर">
-
-<label>कौन सा काम चाहिए? *</label>
-<input id="swork"
-required
-placeholder="जैसे ड्राइवर, हेल्पर, सेल्समैन">
-
-<label>अनुभव</label>
-<input id="sexp" placeholder="जैसे 2 साल">
-
-<label>अतिरिक्त जानकारी</label>
-<textarea id="smsg"
-placeholder="काम से जुड़ी कोई और जानकारी"></textarea>
-
-<button class="submit" type="submit">
-📲 WhatsApp पर भेजें
-</button>
-
-<button class="back" type="button" onclick="goHome()">
-← वापस जाएँ
-</button>
-
-</form>
+<section class="card"><h2>📞 Ravi JobMitra से संपर्क</h2>
+<p>नौकरी या कर्मचारी की जानकारी के लिए WhatsApp पर संदेश भेजें।</p>
+<a class="whatsapp" target="_blank" href="https://wa.me/917224078224?text=Namaste%20Ravi%20JobMitra%2C%20mujhe%20job%20ki%20jaankari%20chahiye.">💬 WhatsApp पर संपर्क करें</a>
 </section>
-
-
-<!-- EMPLOYER -->
-<section id="employer" class="card" style="display:none">
-
-<h2>🏢 मुझे कर्मचारी चाहिए</h2>
-
-<form id="employerForm" onsubmit="sendEmployer(event)">
-
-<label>कंपनी / दुकान का नाम *</label>
-<input id="ename"
-required
-placeholder="कंपनी या दुकान का नाम">
-
-<label>आपका नाम *</label>
-<input id="econtact"
-required
-placeholder="आपका नाम">
-
-<label>मोबाइल नंबर *</label>
-<input id="ephone"
-type="tel"
-inputmode="numeric"
-pattern="[0-9]{10}"
-required
-placeholder="10 अंकों का मोबाइल नंबर">
-
-<label>शहर / जिला *</label>
-<input id="ecity"
-required
-placeholder="जैसे जयपुर">
-
-<label>किस कर्मचारी की जरूरत है? *</label>
-<input id="epost"
-required
-placeholder="जैसे ड्राइवर, हेल्पर, सेल्समैन">
-
-<label>कितने कर्मचारी चाहिए?</label>
-<input id="ecount"
-type="number"
-min="1"
-placeholder="जैसे 2">
-
-<label>वेतन / काम का विवरण</label>
-<textarea id="edetail"
-placeholder="वेतन, समय और काम की जानकारी"></textarea>
-
-<button class="submit" type="submit">
-📲 WhatsApp पर भेजें
-</button>
-
-<button class="back" type="button" onclick="goHome()">
-← वापस जाएँ
-</button>
-
-</form>
-</section>
-
-
-<!-- ABOUT -->
-<section id="about" class="card">
-
-<h2>ℹ️ Ravi JobMitra कैसे काम करता है?</h2>
-
-<div class="info">
-
-<p>
-1️⃣ <b>नौकरी चाहिए?</b><br>
-अपनी जानकारी भरें और WhatsApp पर भेजें।
-</p>
-
-<p>
-2️⃣ <b>कर्मचारी चाहिए?</b><br>
-अपनी जरूरत बताएं।
-</p>
-
-<p>
-3️⃣ <b>संपर्क</b><br>
-हम नौकरी चाहने वालों और काम देने वालों को जोड़ने में मदद करेंगे।
-</p>
-
-</div>
-</section>
-
-</div>
-
-
-<footer>
-© 2026 Ravi JobMitra
-</footer>
-
+</main>
+<footer><b>Ravi JobMitra</b><br>नौकरी और कर्मचारी सेवा<br>© 2026</footer>
 
 <script>
+const WA="917224078224";
+const defaultJobs=[
+{role:"Driver",city:"अपने शहर में",salary:"कंपनी के अनुसार",details:"ड्राइविंग का काम"},
+{role:"Electrician",city:"अपने शहर में",salary:"कंपनी के अनुसार",details:"इलेक्ट्रिशियन की जरूरत"},
+{role:"Helper",city:"अपने शहर में",salary:"₹12,000+ / महीना",details:"फुल टाइम काम"},
+{role:"Salesman",city:"अपने शहर में",salary:"₹15,000+ / महीना",details:"दुकान/कंपनी में काम"}];
 
-const whatsappNumber = "917224078224";
+function getPosts(){try{return JSON.parse(localStorage.getItem("raviJobMitraJobs")||"[]")}catch(e){return[]}}
+function savePosts(p){localStorage.setItem("raviJobMitraJobs",JSON.stringify(p))}
+function allJobs(){return[...getPosts(),...defaultJobs]}
+function esc(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
 
-
-function showForm(type){
-
-  document.getElementById("home").style.display="none";
-  document.getElementById("about").style.display="none";
-
-  document.getElementById(type).style.display="block";
-
-  document.getElementById(type+"Form").style.display="block";
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+function renderJobs(list=allJobs()){
+let box=document.getElementById("jobList"),no=document.getElementById("noJobs");box.innerHTML="";
+list.forEach((j,i)=>{let d=document.createElement("div");d.className="job";
+d.innerHTML=`<h3>💼 ${esc(j.role)}</h3><span class="badge">📍 ${esc(j.city)}</span>
+<p>💰 <b>${esc(j.salary||"जानकारी नहीं")}</b></p><p>${esc(j.details||"काम की जानकारी के लिए संपर्क करें।")}</p>
+<button onclick="applyJob(${i})">📲 Apply / संपर्क</button>`;box.appendChild(d)});
+no.classList.toggle("hidden",list.length!==0)
 }
+function filterJobs(){let q=document.getElementById("search").value.toLowerCase().trim();
+renderJobs(allJobs().filter(j=>[j.role,j.city,j.salary,j.details,j.company].join(" ").toLowerCase().includes(q)))}
 
-
-function goHome(){
-
-  document.getElementById("seeker").style.display="none";
-  document.getElementById("employer").style.display="none";
-
-  document.getElementById("home").style.display="block";
-  document.getElementById("about").style.display="block";
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+function postJob(e){
+e.preventDefault();
+let j={company:company.value.trim(),phone:phone.value.trim(),role:role.value.trim(),city:city.value.trim(),
+salary:salary.value.trim()||"वेतन बातचीत के अनुसार",details:details.value.trim()||"कृपया संपर्क करें।"};
+let p=getPosts();p.unshift(j);savePosts(p);renderJobs();renderMyPosts();e.target.reset();
+if(confirm("Job पोस्ट हो गई है। क्या इसे WhatsApp पर भी भेजना है?")){
+let msg=`*Ravi JobMitra - नई Job Post*%0A%0A🏢 नाम/कंपनी: ${j.company}%0A📱 मोबाइल: ${j.phone}%0A💼 काम: ${j.role}%0A📍 शहर: ${j.city}%0A💰 वेतन: ${j.salary}%0A📝 जानकारी: ${j.details}`;
+window.open("https://wa.me/"+WA+"?text="+msg,"_blank")}
+location.hash="job"
 }
-
-
-function sendJob(event){
-
-  event.preventDefault();
-
-  const message =
-`*Ravi JobMitra - मुझे काम चाहिए*
-
-नाम: ${document.getElementById("sname").value}
-
-मोबाइल: ${document.getElementById("sphone").value}
-
-शहर/जिला: ${document.getElementById("scity").value}
-
-काम: ${document.getElementById("swork").value}
-
-अनुभव: ${document.getElementById("sexp").value}
-
-अतिरिक्त जानकारी: ${document.getElementById("smsg").value}`;
-
-  window.open(
-    "https://wa.me/" +
-    whatsappNumber +
-    "?text=" +
-    encodeURIComponent(message),
-    "_blank"
-  );
-}
-
-
-function sendEmployer(event){
-
-  event.preventDefault();
-
-  const message =
-`*Ravi JobMitra - मुझे कर्मचारी चाहिए*
-
-कंपनी/दुकान: ${document.getElementById("ename").value}
-
-संपर्क व्यक्ति: ${document.getElementById("econtact").value}
-
-मोबाइल: ${document.getElementById("ephone").value}
-
-शहर/जिला: ${document.getElementById("ecity").value}
-
-कर्मचारी/पद: ${document.getElementById("epost").value}
-
-कितने कर्मचारी: ${document.getElementById("ecount").value}
-
-वेतन/काम का विवरण: ${document.getElementById("edetail").value}`;
-
- window.location.href =
-  "https://wa.me/" +
-  whatsappNumber +
-  "?text=" +
-  encodeURIComponent(message); 
-}
-
+function applyJob(i){let j=allJobs()[i];
+let msg=`Namaste Ravi JobMitra,%0A%0Aमुझे इस Job में interest है।%0A💼 Job: ${j.role}%0A📍 शहर: ${j.city}%0A💰 Salary: ${j.salary}`;
+window.open("https://wa.me/"+WA+"?text="+msg,"_blank")}
+function renderMyPosts(){let b=document.getElementById("myPosts"),p=getPosts();
+if(!p.length){b.innerHTML="<p>अभी आपने कोई Job Post नहीं की है।</p>";return}
+b.innerHTML=p.map((j,i)=>`<div class="job" style="margin-bottom:10px"><h3>💼 ${esc(j.role)}</h3>
+<p>🏢 ${esc(j.company)} • 📍 ${esc(j.city)}</p><p>💰 ${esc(j.salary)}</p>
+<button onclick="sendAgain(${i})">📲 WhatsApp</button> <button onclick="delPost(${i})">🗑️ हटाएँ</button></div>`).join("")}
+function sendAgain(i){let j=getPosts()[i];
+let msg=`*Ravi JobMitra - Job Post*%0A%0A🏢 नाम/कंपनी: ${j.company}%0A📱 मोबाइल: ${j.phone}%0A💼 काम: ${j.role}%0A📍 शहर: ${j.city}%0A💰 वेतन: ${j.salary}%0A📝 जानकारी: ${j.details}`;
+window.open("https://wa.me/"+WA+"?text="+msg,"_blank")}
+function delPost(i){let p=getPosts();p.splice(i,1);savePosts(p);renderJobs();renderMyPosts()}
+renderJobs();renderMyPosts();
 </script>
-
 </body>
 </html>
