@@ -2,274 +2,373 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#075b99">
 <title>RK JOB MITRA</title>
 
 <style>
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Arial,"Noto Sans Devanagari",sans-serif
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+    font-family:Arial,"Noto Sans Devanagari",sans-serif;
+}
+
+:root{
+    --blue:#075b99;
+    --blue2:#087bd1;
+    --green:#25d366;
+    --white:#ffffff;
+    --bg:#f3f7fb;
+    --text:#222222;
+    --gray:#666666;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
 }
 
 body{
-  background:#f3f7fb;
-  color:#222;
-  padding-bottom:90px
+    background:var(--bg);
+    color:var(--text);
+    padding-bottom:92px;
+    overflow-x:hidden;
 }
 
 header{
-  background:linear-gradient(135deg,#075b99,#087bd1);
-  color:#fff;
-  text-align:center;
-  padding:20px 12px
+    width:100%;
+    background:linear-gradient(135deg,#075b99,#087bd1);
+    color:white;
+    text-align:center;
+    padding:18px 12px;
 }
 
 header h1{
-  font-size:28px;
-  margin-bottom:7px
+    font-size:26px;
+    margin-bottom:7px;
+    font-weight:800;
 }
 
 header p{
-  font-size:14px;
-  line-height:1.5
+    font-size:14px;
+    line-height:1.5;
 }
 
 nav{
-  display:flex;
-  overflow-x:auto;
-  background:#fff;
-  box-shadow:0 2px 8px #0002;
-  position:sticky;
-  top:0;
-  z-index:10
+    width:100%;
+    display:flex;
+    overflow-x:auto;
+    overflow-y:hidden;
+    background:white;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+    position:relative;
+    z-index:10;
+    scrollbar-width:none;
+}
+
+nav::-webkit-scrollbar{
+    display:none;
 }
 
 nav button{
-  flex:0 0 25%;
-  min-width:120px;
-  padding:15px 8px;
-  border:0;
-  background:#fff;
-  color:#075b99;
-  font-size:15px;
-  font-weight:700
+    flex:0 0 25%;
+    min-width:120px;
+    padding:15px 10px;
+    border:0;
+    background:white;
+    color:var(--blue);
+    font-size:15px;
+    font-weight:700;
 }
 
 nav button.active{
-  background:#075b99;
-  color:#fff
+    background:var(--blue);
+    color:white;
 }
 
 main{
-  max-width:680px;
-  margin:auto;
-  padding:15px
+    width:100%;
+    max-width:680px;
+    margin:0 auto;
+    padding:15px;
 }
 
 .hidden{
-  display:none!important
-}
-
-.welcome,.form-box,.contact-box,.job-card{
-  background:#fff;
-  border-radius:18px;
-  padding:20px;
-  box-shadow:0 4px 15px #00000012;
-  margin-bottom:16px
+    display:none !important;
 }
 
 .welcome{
-  text-align:center
+    background:white;
+    border-radius:20px;
+    padding:24px 16px;
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    margin-bottom:18px;
 }
 
-.welcome h2,.section-title{
-  color:#075b99;
-  margin-bottom:12px
+.welcome h2{
+    color:var(--blue);
+    font-size:24px;
+    margin-bottom:10px;
 }
 
 .welcome p{
-  line-height:1.7
+    color:#444;
+    font-size:16px;
+    line-height:1.7;
 }
 
 .home-menu{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
 }
 
 .home-card{
-  min-height:160px;
-  background:#fff;
-  border-radius:18px;
-  padding:18px 8px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  color:#075b99;
-  font-size:18px;
-  font-weight:800;
-  box-shadow:0 4px 15px #00000012;
-  cursor:pointer
+    min-height:175px;
+    background:white;
+    border-radius:20px;
+    padding:18px 8px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:var(--blue);
+    font-size:19px;
+    font-weight:800;
+    box-shadow:0 4px 15px rgba(0,0,0,.10);
+    cursor:pointer;
+}
+
+.home-card:active{
+    transform:scale(.98);
 }
 
 .home-icon{
-  font-size:45px;
-  margin-bottom:14px
+    font-size:48px;
+    line-height:1;
+    margin-bottom:16px;
 }
 
 .contact-box{
-  text-align:center
+    background:white;
+    border-radius:20px;
+    margin-top:16px;
+    padding:23px 12px;
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
 .contact-box h3{
-  color:#075b99;
-  margin-bottom:8px
+    color:var(--blue);
+    font-size:20px;
+    margin-bottom:10px;
 }
 
 .contact-number{
-  font-size:28px;
-  font-weight:800
+    font-size:29px;
+    font-weight:800;
+    letter-spacing:1px;
 }
 
 .section-title{
-  text-align:center;
-  font-size:23px
+    color:var(--blue);
+    text-align:center;
+    font-size:23px;
+    margin:8px 0 18px;
+}
+
+.form-box{
+    background:white;
+    padding:19px;
+    border-radius:18px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
 .form-group{
-  margin-bottom:15px
+    margin-bottom:15px;
 }
 
 .form-group label{
-  display:block;
-  font-size:14px;
-  font-weight:700;
-  margin-bottom:7px
+    display:block;
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:7px;
+    color:#444;
 }
 
 input,textarea{
-  width:100%;
-  border:1px solid #ccc;
-  border-radius:9px;
-  padding:13px;
-  font-size:16px;
-  background:#fff
+    display:block;
+    width:100%;
+    border:1px solid #cfcfcf;
+    border-radius:9px;
+    padding:13px;
+    background:white;
+    color:#222;
+    font-size:16px;
+    outline:none;
+}
+
+input:focus,textarea:focus{
+    border-color:var(--blue2);
+    box-shadow:0 0 0 2px rgba(8,123,209,.10);
 }
 
 textarea{
-  min-height:110px;
-  resize:vertical
+    min-height:105px;
+    resize:vertical;
 }
 
 .btn{
-  display:block;
-  width:100%;
-  border:0;
-  border-radius:10px;
-  padding:14px;
-  font-size:16px;
-  font-weight:800;
-  color:#fff;
-  cursor:pointer
+    display:block;
+    width:100%;
+    border:0;
+    border-radius:10px;
+    padding:14px;
+    font-size:16px;
+    font-weight:800;
+    color:white;
+    cursor:pointer;
 }
 
 .btn-blue{
-  background:#087bd1
+    background:var(--blue2);
 }
 
 .btn-green{
-  background:#25d366
+    background:var(--green);
 }
 
 .search-box{
-  display:flex;
-  gap:8px;
-  margin-bottom:16px
+    display:flex;
+    gap:8px;
+    margin-bottom:16px;
 }
 
 .search-box input{
-  flex:1;
-  min-width:0
+    min-width:0;
+    flex:1;
 }
 
 .search-box button{
-  width:auto;
-  min-width:82px
+    width:auto;
+    min-width:82px;
 }
 
 .job-card{
-  border-left:5px solid #087bd1
+    background:white;
+    border-left:5px solid var(--blue2);
+    border-radius:16px;
+    padding:17px;
+    margin-bottom:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 .job-title{
-  color:#075b99;
-  font-size:20px;
-  font-weight:800;
-  margin-bottom:10px
+    color:var(--blue);
+    font-size:20px;
+    font-weight:800;
+    margin-bottom:10px;
 }
 
 .job-detail{
-  font-size:15px;
-  line-height:1.55;
-  margin:6px 0
+    font-size:15px;
+    line-height:1.55;
+    margin:6px 0;
+}
+
+.job-detail strong{
+    color:#222;
 }
 
 .job-actions{
-  display:flex;
-  gap:10px;
-  margin-top:15px
+    display:flex;
+    gap:10px;
+    margin-top:15px;
 }
 
-.job-actions a,.bottom-bar a{
-  flex:1;
-  display:block;
-  padding:12px 6px;
-  border-radius:8px;
-  color:#fff;
-  text-decoration:none;
-  text-align:center;
-  font-weight:800
+.job-actions a{
+    flex:1;
+    display:block;
+    padding:12px 6px;
+    border-radius:8px;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    font-size:14px;
+    font-weight:800;
 }
 
-.call-btn,.bottom-call{
-  background:#159db5
+.call-btn{
+    background:#159db5;
 }
 
-.wa-btn,.bottom-wa{
-  background:#25d366
+.wa-btn{
+    background:var(--green);
 }
 
 .bottom-bar{
-  position:fixed;
-  left:0;
-  right:0;
-  bottom:0;
-  background:#fff;
-  padding:10px;
-  display:flex;
-  gap:10px;
-  box-shadow:0 -3px 15px #0002;
-  z-index:1000
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    background:white;
+    padding:10px;
+    display:flex;
+    gap:10px;
+    box-shadow:0 -3px 15px rgba(0,0,0,.15);
+    z-index:1000;
+}
+
+.bottom-bar a{
+    flex:1;
+    display:block;
+    padding:14px 5px;
+    border-radius:10px;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    font-size:16px;
+    font-weight:800;
+}
+
+.bottom-call{
+    background:#159db5;
+}
+
+.bottom-wa{
+    background:var(--green);
 }
 
 @media(max-width:380px){
-  .home-menu{
-    gap:10px
-  }
+    main{
+        padding:12px;
+    }
 
-  .home-card{
-    min-height:145px;
-    font-size:16px
-  }
+    .home-menu{
+        gap:12px;
+    }
 
-  .home-icon{
-    font-size:40px
-  }
+    .home-card{
+        min-height:155px;
+        font-size:17px;
+    }
+
+    .home-icon{
+        font-size:42px;
+    }
+
+    .contact-number{
+        font-size:25px;
+    }
+
+    nav button{
+        min-width:112px;
+    }
 }
 </style>
 </head>
@@ -277,164 +376,236 @@ textarea{
 <body>
 
 <header>
-<h1>RK JOB MITRA</h1>
-<p>नौकरी ढूंढने वालों और काम देने वालों को जोड़ने का आसान प्लेटफॉर्म</p>
+    <h1>RK JOB MITRA</h1>
+    <p>नौकरी ढूंढने वालों और काम देने वालों को जोड़ने का आसान प्लेटफॉर्म</p>
 </header>
 
 <nav id="navbar">
-<button class="active" type="button" onclick="showSection('home')">Home</button>
-<button type="button" onclick="showSection('jobs')">Jobs</button>
-<button type="button" onclick="showSection('seeker')">Job Seeker</button>
-<button type="button" onclick="showSection('employer')">Employer</button>
+    <button class="active" onclick="showSection('home')">Home</button>
+    <button onclick="showSection('jobs')">Jobs</button>
+    <button onclick="showSection('seeker')">Job Seeker</button>
+    <button onclick="showSection('employer')">Employer</button>
 </nav>
 
 <main>
 
 <section id="home-section">
 
-<div class="welcome">
-<h2>RK JOB MITRA में स्वागत है</h2>
-<p>यहाँ आप नौकरी खोज सकते हैं और कंपनियों, दुकानों या ठेकेदारों के लिए स्टाफ ढूंढ सकते हैं।</p>
-</div>
+    <div class="welcome">
+        <h2>RK JOB MITRA में स्वागत है</h2>
+        <p>
+            यहाँ आप नौकरी खोज सकते हैं और कंपनियों,
+            दुकानों या ठेकेदारों के लिए स्टाफ ढूंढ सकते हैं।
+        </p>
+    </div>
 
-<div class="home-menu">
+    <div class="home-menu">
 
-<div class="home-card" onclick="showSection('jobs')">
-<div class="home-icon">🔍</div>
-नौकरी खोजें
-</div>
+        <div class="home-card" onclick="showSection('jobs')">
+            <div class="home-icon">🔍</div>
+            नौकरी खोजें
+        </div>
 
-<div class="home-card" onclick="showSection('seeker')">
-<div class="home-icon">📄</div>
-मुझे काम चाहिए
-</div>
+        <div class="home-card" onclick="showSection('seeker')">
+            <div class="home-icon">📄</div>
+            नौकरी के लिए रजिस्टर करें
+        </div>
 
-<div class="home-card" onclick="showSection('employer')">
-<div class="home-icon">🏢</div>
-मुझे कर्मचारी चाहिए
-</div>
+        <div class="home-card" onclick="showSection('employer')">
+            <div class="home-icon">🏢</div>
+            स्टाफ चाहिए?
+        </div>
 
-<div class="home-card" onclick="openMainWhatsApp()">
-<div class="home-icon">💬</div>
-WhatsApp संपर्क
-</div>
+        <div class="home-card" onclick="openMainWhatsApp()">
+            <div class="home-icon">💬</div>
+            WhatsApp संपर्क
+        </div>
 
-</div>
+    </div>
 
-<div class="contact-box">
-<h3>RK JOB MITRA संपर्क नंबर</h3>
-<div class="contact-number">7224078224</div>
-</div>
+    <div class="contact-box">
+        <h3>RK JOB MITRA संपर्क नंबर</h3>
+        <div class="contact-number">7224078224</div>
+    </div>
 
 </section>
 
 <section id="jobs-section" class="hidden">
 
-<h2 class="section-title">नौकरी खोजें</h2>
+    <h2 class="section-title">नौकरी खोजें</h2>
 
-<div class="search-box">
-<input id="searchInput" type="text" placeholder="काम या शहर खोजें..." oninput="searchJobs()">
-<button type="button" class="btn btn-blue" onclick="searchJobs()">खोजें</button>
-</div>
+    <div class="search-box">
+        <input
+            id="searchInput"
+            type="text"
+            placeholder="काम या शहर खोजें..."
+            oninput="searchJobs()">
 
-<div id="jobList"></div>
+        <button
+            type="button"
+            class="btn btn-blue"
+            onclick="searchJobs()">
+            खोजें
+        </button>
+    </div>
+
+    <div id="jobList"></div>
 
 </section>
 
 <section id="seeker-section" class="hidden">
 
-<h2 class="section-title">नौकरी के लिए रजिस्टर करें</h2>
+    <h2 class="section-title">नौकरी के लिए रजिस्टर करें</h2>
 
-<div class="form-box">
+    <div class="form-box">
 
-<form id="seekerForm" onsubmit="submitSeeker(event)">
+        <form id="seekerForm" onsubmit="submitSeeker(event)">
 
-<div class="form-group">
-<label>पूरा नाम *</label>
-<input id="sk_name" required placeholder="अपना नाम लिखें">
-</div>
+            <div class="form-group">
+                <label for="sk_name">पूरा नाम *</label>
+                <input id="sk_name" type="text" required placeholder="अपना नाम लिखें">
+            </div>
 
-<div class="form-group">
-<label>मोबाइल नंबर *</label>
-<input id="sk_mobile" type="tel" inputmode="numeric" maxlength="10" pattern="[0-9]{10}" required placeholder="10 digit mobile number">
-</div>
+            <div class="form-group">
+                <label for="sk_mobile">मोबाइल नंबर *</label>
+                <input
+                    id="sk_mobile"
+                    type="tel"
+                    inputmode="numeric"
+                    maxlength="10"
+                    pattern="[0-9]{10}"
+                    required
+                    placeholder="10 digit mobile number">
+            </div>
 
-<div class="form-group">
-<label>आप क्या काम करते हैं? *</label>
-<input id="sk_skill" required placeholder="जैसे Driver, Helper, Electrician">
-</div>
+            <div class="form-group">
+                <label for="sk_skill">आप क्या काम करते हैं? *</label>
+                <input
+                    id="sk_skill"
+                    type="text"
+                    required
+                    placeholder="जैसे Driver, Helper, Electrician">
+            </div>
 
-<div class="form-group">
-<label>शहर / पता *</label>
-<input id="sk_location" required placeholder="जैसे Guna">
-</div>
+            <div class="form-group">
+                <label for="sk_location">शहर / पता *</label>
+                <input
+                    id="sk_location"
+                    type="text"
+                    required
+                    placeholder="जैसे Guna">
+            </div>
 
-<div class="form-group">
-<label>अनुभव</label>
-<input id="sk_exp" placeholder="जैसे 2 साल / Fresher">
-</div>
+            <div class="form-group">
+                <label for="sk_exp">अनुभव</label>
+                <input
+                    id="sk_exp"
+                    type="text"
+                    placeholder="जैसे 2 साल / Fresher">
+            </div>
 
-<button type="submit" class="btn btn-green">
-💬 WhatsApp पर भेजें
-</button>
+            <button type="submit" class="btn btn-green">
+                💬 WhatsApp पर भेजें
+            </button>
 
-</form>
-</div>
+        </form>
+
+    </div>
 
 </section>
 
 <section id="employer-section" class="hidden">
 
-<h2 class="section-title">Job Post करें</h2>
+    <h2 class="section-title">Job Post करें</h2>
 
-<div class="form-box">
+    <div class="form-box">
 
-<form id="employerForm" onsubmit="submitEmployer(event)">
+        <form id="employerForm" onsubmit="submitEmployer(event)">
 
-<div class="form-group">
-<label>कंपनी / दुकान / ठेकेदार का नाम *</label>
-<input id="em_company" required placeholder="नाम लिखें">
-</div>
+            <div class="form-group">
+                <label for="em_company">कंपनी / दुकान / ठेकेदार का नाम *</label>
+                <input
+                    id="em_company"
+                    type="text"
+                    required
+                    placeholder="कंपनी का नाम">
+            </div>
 
-<div class="form-group">
-<label>संपर्क नंबर *</label>
-<input id="em_mobile" type="tel" inputmode="numeric" maxlength="10" pattern="[0-9]{10}" required placeholder="10 digit number">
-</div>
+            <div class="form-group">
+                <label for="em_mobile">संपर्क मोबाइल नंबर *</label>
+                <input
+                    id="em_mobile"
+                    type="tel"
+                    inputmode="numeric"
+                    maxlength="10"
+                    pattern="[0-9]{10}"
+                    required
+                    placeholder="10 digit mobile number">
+            </div>
 
-<div class="form-group">
-<label>नौकरी का नाम *</label>
-<input id="em_title" required placeholder="जैसे Driver">
-</div>
+            <div class="form-group">
+                <label for="em_title">नौकरी का नाम *</label>
+                <input
+                    id="em_title"
+                    type="text"
+                    required
+                    placeholder="जैसे Driver, Helper">
+            </div>
 
-<div class="form-group">
-<label>नौकरी का स्थान *</label>
-<input id="em_location" required placeholder="जैसे Guna">
-</div>
+            <div class="form-group">
+                <label for="em_location">नौकरी का स्थान *</label>
+                <input
+                    id="em_location"
+                    type="text"
+                    required
+                    placeholder="जैसे Guna">
+            </div>
 
-<div class="form-group">
-<label>वेतन *</label>
-<input id="em_salary" required placeholder="जैसे ₹12000 - ₹15000">
-</div>
+            <div class="form-group">
+                <label for="em_salary">वेतन *</label>
+                <input
+                    id="em_salary"
+                    type="text"
+                    required
+                    placeholder="जैसे ₹12,000">
+            </div>
 
-<div class="form-group">
-<label>काम की जानकारी *</label>
-<textarea id="em_desc" required placeholder="काम की पूरी जानकारी लिखें"></textarea>
-</div>
+            <div class="form-group">
+                <label for="em_desc">काम की जानकारी *</label>
+                <textarea
+                    id="em_desc"
+                    required
+                    placeholder="काम की पूरी जानकारी लिखें"></textarea>
+            </div>
 
-<button type="submit" class="btn btn-blue">
-📤 Job Post करें
-</button>
+            <button type="submit" class="btn btn-blue">
+                Job Post करें
+            </button>
 
-</form>
-</div>
+        </form>
+
+    </div>
 
 </section>
 
 </main>
 
 <div class="bottom-bar">
-<a href="tel:+917224078224" class="bottom-call">📞 Call / नंबर</a>
-<a href="https://wa.me/917224078224" target="_blank" rel="noopener noreferrer" class="bottom-wa">💬 WhatsApp</a>
+
+    <a
+        href="tel:+917224078224"
+        class="bottom-call">
+        📞 Call / नंबर
+    </a>
+
+    <a
+        href="https://wa.me/917224078224?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20RK%20JOB%20MITRA%2C%20%E0%A4%AE%E0%A5%81%E0%A4%9D%E0%A5%87%20%E0%A4%A8%E0%A5%8C%E0%A4%95%E0%A4%B0%E0%A5%80%20%E0%A4%95%E0%A5%87%20%E0%A4%AC%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%AE%E0%A5%87%E0%A4%82%20%E0%A4%9C%E0%A4%BE%E0%A4%A8%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%80%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%8F%E0%A5%A4"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bottom-wa">
+        💬 WhatsApp
+    </a>
+
 </div>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
@@ -443,276 +614,389 @@ WhatsApp संपर्क
 <script>
 "use strict";
 
-const CONTACT_NUMBER="917224078224";
-const DISPLAY_NUMBER="7224078224";
+const CONTACT_NUMBER = "917224078224";
+const DISPLAY_NUMBER = "7224078224";
 
-const firebaseConfig={
- apiKey:"AIzaSyCkxdrEgXizC3DVWNvZ3100GC7zcssIsmg",
- authDomain:"ravi-jobmitra.firebaseapp.com",
- databaseURL:"https://ravi-jobmitra-default-rtdb.firebaseio.com",
- projectId:"ravi-jobmitra",
- storageBucket:"ravi-jobmitra.firebasestorage.app",
- messagingSenderId:"929099052458",
- appId:"1:929099052458:web:822d4e201399f779b3a7d3"
+const firebaseConfig = {
+  apiKey: "AIzaSyCkxdrEgXizC3DVWNvZ3100GC7zcssIsmg",
+  authDomain: "ravi-jobmitra.firebaseapp.com",
+  databaseURL: "https://ravi-jobmitra-default-rtdb.firebaseio.com",
+  projectId: "ravi-jobmitra",
+  storageBucket: "ravi-jobmitra.firebasestorage.app",
+  messagingSenderId: "929099052458",
+  appId: "1:929099052458:web:822d4e201399f779b3a7d3"
 };
 
-let db=null;
-let jobsRef=null;
-let firebaseReady=false;
+firebase.initializeApp(firebaseConfig);
 
-try{
- firebase.initializeApp(firebaseConfig);
- db=firebase.database();
- jobsRef=db.ref("jobs");
- firebaseReady=true;
-}catch(error){
- console.error("Firebase initialization error:",error);
-}
+const db = firebase.database();
+const jobsRef = db.ref("jobs");
+const seekersRef = db.ref("seekers");
 
-const defaultJobs=[
-{id:1,title:"Helper (हेल्पर)",company:"RK Traders",mobile:DISPLAY_NUMBER,location:"Guna, MP",salary:"₹8,000 - ₹10,000",desc:"दुकान में सामान रखने और साफ-सफाई के लिए मेहनती व्यक्ति चाहिए।"},
-{id:2,title:"Driver (ड्राइवर)",company:"Shree Logistics",mobile:DISPLAY_NUMBER,location:"Ashoknagar, MP",salary:"₹12,000 + TA",desc:"पिकअप गाड़ी चलाने के लिए लाइसेंस धारक अनुभवी ड्राइवर चाहिए।"},
-{id:3,title:"Electrician (इलेक्ट्रीशियन)",company:"Gupta Electricals",mobile:DISPLAY_NUMBER,location:"Guna, MP",salary:"₹15,000",desc:"हाउस वायरिंग और रिपेयरिंग का काम जानने वाला इलेक्ट्रीशियन चाहिए।"},
-{id:4,title:"Security Guard (सिक्योरिटी गार्ड)",company:"SafeHome Security",mobile:DISPLAY_NUMBER,location:"Bina, MP",salary:"₹10,000 - ₹12,000",desc:"सुरक्षा के लिए सिक्योरिटी गार्ड की आवश्यकता है।"}
+const defaultJobs = [
+  {
+    id:1,
+    title:"Helper (हेल्पर)",
+    company:"RK Traders",
+    mobile:DISPLAY_NUMBER,
+    location:"Guna, MP",
+    salary:"₹8,000 - ₹10,000",
+    desc:"दुकान में सामान रखने और साफ-सफाई के लिए मेहनती व्यक्ति चाहिए।"
+  },
+  {
+    id:2,
+    title:"Driver (ड्राइवर)",
+    company:"Shree Logistics",
+    mobile:DISPLAY_NUMBER,
+    location:"Ashoknagar, MP",
+    salary:"₹12,000 + TA",
+    desc:"पिकअप गाड़ी चलाने के लिए लाइसेंस धारक अनुभवी ड्राइवर चाहिए।"
+  },
+  {
+    id:3,
+    title:"Electrician (इलेक्ट्रीशियन)",
+    company:"Gupta Electricals",
+    mobile:DISPLAY_NUMBER,
+    location:"Guna, MP",
+    salary:"₹15,000",
+    desc:"हाउस वायरिंग और रिपेयरिंग का काम जानने वाला इलेक्ट्रीशियन चाहिए।"
+  },
+  {
+    id:4,
+    title:"Security Guard (सिक्योरिटी गार्ड)",
+    company:"SafeHome Security",
+    mobile:DISPLAY_NUMBER,
+    location:"Bina, MP",
+    salary:"₹10,000 - ₹12,000",
+    desc:"सुरक्षा के लिए सिक्योरिटी गार्ड की आवश्यकता है।"
+  }
 ];
 
-let jobs=defaultJobs.slice();
+let jobs=[];
+
+function loadJobs(){
+
+  jobsRef.on("value",function(snapshot){
+
+    const data=snapshot.val();
+
+    if(data && typeof data==="object"){
+
+      jobs=Object.keys(data).map(function(key){
+        return data[key];
+      });
+
+    }else{
+
+      jobs=defaultJobs.slice();
+
+      const updates={};
+
+      jobs.forEach(function(job){
+        updates[String(job.id)]=job;
+      });
+
+      jobsRef.update(updates).catch(function(error){
+        console.error("Firebase demo jobs save error:",error);
+      });
+    }
+
+    renderJobs(jobs);
+
+    const input=document.getElementById("searchInput");
+
+    if(input && input.value.trim()){
+      searchJobs();
+    }
+
+  },function(error){
+
+    console.error("Firebase read error:",error);
+
+    jobs=defaultJobs.slice();
+
+    renderJobs(jobs);
+
+    alert("Firebase से Jobs लोड नहीं हो पाईं। कृपया इंटरनेट और Firebase Rules जांचें।");
+
+  });
+}
 
 function showSection(section){
 
- const names=["home","jobs","seeker","employer"];
+  const names=["home","jobs","seeker","employer"];
 
- names.forEach(name=>{
-   const el=document.getElementById(name+"-section");
-   if(el) el.classList.add("hidden");
- });
+  names.forEach(function(name){
 
- const selected=document.getElementById(section+"-section");
+    const el=document.getElementById(name+"-section");
 
- if(!selected)return;
+    if(el){
+      el.classList.add("hidden");
+    }
 
- selected.classList.remove("hidden");
+  });
 
- const buttons=document.querySelectorAll("#navbar button");
+  const selected=document.getElementById(section+"-section");
 
- buttons.forEach(b=>b.classList.remove("active"));
+  if(selected){
+    selected.classList.remove("hidden");
+  }
 
- const index=names.indexOf(section);
+  const buttons=document.querySelectorAll("#navbar button");
 
- if(index>=0 && buttons[index])
-   buttons[index].classList.add("active");
+  buttons.forEach(function(button){
+    button.classList.remove("active");
+  });
 
- if(section==="jobs")
-   renderJobs(jobs);
+  const index=names.indexOf(section);
 
- window.scrollTo({top:0,behavior:"smooth"});
+  if(index>=0 && buttons[index]){
+    buttons[index].classList.add("active");
+  }
+
+  if(section==="jobs"){
+    renderJobs(jobs);
+  }
+
+  window.scrollTo(0,0);
 }
 
 function escapeHTML(value){
 
- return String(value??"")
- .replace(/&/g,"&amp;")
- .replace(/</g,"&lt;")
- .replace(/>/g,"&gt;")
- .replace(/"/g,"&quot;")
- .replace(/'/g,"&#039;");
+  return String(value==null?"":value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 }
 
 function renderJobs(list){
 
- const container=document.getElementById("jobList");
+  const container=document.getElementById("jobList");
 
- if(!container)return;
+  if(!container) return;
 
- container.innerHTML="";
+  container.innerHTML="";
 
- if(!Array.isArray(list)||!list.length){
+  if(!Array.isArray(list) || list.length===0){
 
-   container.innerHTML='<div class="form-box" style="text-align:center">कोई नौकरी नहीं मिली।</div>';
+    container.innerHTML=
+      '<div class="form-box" style="text-align:center;color:#666;">कोई नौकरी नहीं मिली।</div>';
 
-   return;
- }
+    return;
+  }
 
- list.slice().reverse().forEach(job=>{
+  const sorted=list.slice().reverse();
 
-   const message=`नमस्ते RK JOB MITRA,
+  sorted.forEach(function(job){
 
-मैं इस नौकरी के लिए आवेदन करना चाहता हूँ।
+    const title=job.title||"";
+    const company=job.company||"";
+    const location=job.location||"";
+    const salary=job.salary||"";
+    const desc=job.desc||"";
 
-नौकरी: ${job.title||""}
-कंपनी: ${job.company||""}
-स्थान: ${job.location||""}
-वेतन: ${job.salary||""}`;
+    const message=
+      "नमस्ते RK JOB MITRA,\n\n"+
+      "मैं इस नौकरी के लिए आवेदन करना चाहता हूँ।\n\n"+
+      "नौकरी: "+title+"\n"+
+      "कंपनी: "+company+"\n"+
+      "स्थान: "+location+"\n"+
+      "वेतन: "+salary+"\n\n"+
+      "कृपया मुझे इस नौकरी के बारे में जानकारी दें।";
 
-   const wa="https://wa.me/"+CONTACT_NUMBER+"?text="+encodeURIComponent(message);
+    const waUrl=
+      "https://wa.me/"+
+      CONTACT_NUMBER+
+      "?text="+
+      encodeURIComponent(message);
 
-   const card=document.createElement("div");
+    const card=document.createElement("div");
 
-   card.className="job-card";
+    card.className="job-card";
 
-   card.innerHTML=
-    '<div class="job-title">'+escapeHTML(job.title)+'</div>'+
-    '<div class="job-detail"><strong>कंपनी:</strong> '+escapeHTML(job.company)+'</div>'+
-    '<div class="job-detail"><strong>स्थान:</strong> '+escapeHTML(job.location)+'</div>'+
-    '<div class="job-detail"><strong>वेतन:</strong> '+escapeHTML(job.salary)+'</div>'+
-    '<div class="job-detail"><strong>काम:</strong> '+escapeHTML(job.desc)+'</div>'+
-    '<div class="job-actions"><a class="call-btn" href="tel:+917224078224">📞 Call</a><a class="wa-btn" target="_blank" rel="noopener noreferrer" href="'+wa+'">💬 WhatsApp</a></div>';
+    card.innerHTML=
+      '<div class="job-title">'+escapeHTML(title)+'</div>'+
+      '<div class="job-detail"><strong>कंपनी:</strong> '+escapeHTML(company)+'</div>'+
+      '<div class="job-detail"><strong>स्थान:</strong> '+escapeHTML(location)+'</div>'+
+      '<div class="job-detail"><strong>वेतन:</strong> '+escapeHTML(salary)+'</div>'+
+      '<div class="job-detail"><strong>काम:</strong> '+escapeHTML(desc)+'</div>'+
+      '<div class="job-actions">'+
+        '<a href="tel:+917224078224" class="call-btn">📞 Call</a>'+
+        '<a href="'+waUrl+'" target="_blank" rel="noopener noreferrer" class="wa-btn">💬 WhatsApp</a>'+
+      '</div>';
 
-   container.appendChild(card);
+    container.appendChild(card);
 
- });
+  });
 }
 
 function searchJobs(){
 
- const input=document.getElementById("searchInput");
+  const input=document.getElementById("searchInput");
 
- if(!input)return;
+  if(!input) return;
 
- const q=input.value.trim().toLowerCase();
+  const query=input.value.trim().toLowerCase();
 
- if(!q){
-   renderJobs(jobs);
-   return;
- }
+  if(!query){
+    renderJobs(jobs);
+    return;
+  }
 
- renderJobs(jobs.filter(job=>
-   (String(job.title||"")+" "+
-   String(job.company||"")+" "+
-   String(job.location||"")+" "+
-   String(job.salary||"")+" "+
-   String(job.desc||"")).toLowerCase().includes(q)
- ));
+  const filtered=jobs.filter(function(job){
+
+    const text=
+      String(job.title||"")+" "+
+      String(job.company||"")+" "+
+      String(job.location||"")+" "+
+      String(job.salary||"")+" "+
+      String(job.desc||"");
+
+    return text.toLowerCase().includes(query);
+
+  });
+
+  renderJobs(filtered);
 }
 
 function openMainWhatsApp(){
 
- const url="https://wa.me/"+CONTACT_NUMBER+"?text="+encodeURIComponent(
- "नमस्ते RK JOB MITRA, मुझे नौकरी के बारे में जानकारी चाहिए।"
- );
+  const message=
+    "नमस्ते RK JOB MITRA, मुझे नौकरी के बारे में जानकारी चाहिए।";
 
- window.location.href=url;
+  const url=
+    "https://wa.me/"+
+    CONTACT_NUMBER+
+    "?text="+
+    encodeURIComponent(message);
+
+  window.open(url,"_blank","noopener,noreferrer");
 }
 
 function submitSeeker(event){
 
- event.preventDefault();
+  event.preventDefault();
 
- const name=document.getElementById("sk_name").value.trim();
- const mobile=document.getElementById("sk_mobile").value.trim();
- const skill=document.getElementById("sk_skill").value.trim();
- const location=document.getElementById("sk_location").value.trim();
- const exp=document.getElementById("sk_exp").value.trim()||"Fresher";
+  const name=document.getElementById("sk_name").value.trim();
+  const mobile=document.getElementById("sk_mobile").value.trim();
+  const skill=document.getElementById("sk_skill").value.trim();
+  const location=document.getElementById("sk_location").value.trim();
+  const exp=document.getElementById("sk_exp").value.trim() || "Fresher";
 
- const message=`*RK JOB MITRA - Job Seeker Registration*
+  const seeker={
+    id:Date.now(),
+    name:name,
+    mobile:mobile,
+    skill:skill,
+    location:location,
+    exp:exp,
+    createdAt:new Date().toISOString()
+  };
 
-*नाम:* ${name}
-*मोबाइल:* ${mobile}
-*काम / Skill:* ${skill}
-*शहर / पता:* ${location}
-*अनुभव:* ${exp}
+  seekersRef.child(String(seeker.id)).set(seeker)
 
-कृपया मुझे मेरे काम के अनुसार नौकरी बताएं।`;
+    .then(function(){
 
- window.location.href=
- "https://wa.me/"+CONTACT_NUMBER+"?text="+encodeURIComponent(message);
+      const message=
+        "*RK JOB MITRA - Job Seeker Registration*\n\n"+
+        "*नाम:* "+name+"\n"+
+        "*मोबाइल:* "+mobile+"\n"+
+        "*काम / Skill:* "+skill+"\n"+
+        "*शहर / पता:* "+location+"\n"+
+        "*अनुभव:* "+exp+"\n\n"+
+        "कृपया मुझे मेरे काम के अनुसार नौकरी बताएं।";
+
+      const url=
+        "https://wa.me/"+
+        CONTACT_NUMBER+
+        "?text="+
+        encodeURIComponent(message);
+
+      document.getElementById("seekerForm").reset();
+
+      alert("आपकी जानकारी Firebase में सेव हो गई है। अब WhatsApp खुलेगा।");
+
+      window.open(url,"_blank","noopener,noreferrer");
+
+    })
+
+    .catch(function(error){
+
+      console.error("Firebase seeker save error:",error);
+
+      alert("जानकारी Firebase में सेव नहीं हुई। Firebase Rules और इंटरनेट कनेक्शन जांचें।");
+
+    });
 }
 
 function submitEmployer(event){
 
- event.preventDefault();
+  event.preventDefault();
 
- const newJob={
-   id:Date.now(),
-   company:document.getElementById("em_company").value.trim(),
-   mobile:document.getElementById("em_mobile").value.trim(),
-   title:document.getElementById("em_title").value.trim(),
-   location:document.getElementById("em_location").value.trim(),
-   salary:document.getElementById("em_salary").value.trim(),
-   desc:document.getElementById("em_desc").value.trim()
- };
+  const newJob={
 
- const afterSave=()=>{
+    id:Date.now(),
 
-   jobs.unshift(newJob);
+    company:
+      document.getElementById("em_company").value.trim(),
 
-   const message=`*RK JOB MITRA - नई Job Post*
+    mobile:
+      document.getElementById("em_mobile").value.trim(),
 
-*कंपनी:* ${newJob.company}
-*संपर्क नंबर:* ${newJob.mobile}
-*नौकरी:* ${newJob.title}
-*स्थान:* ${newJob.location}
-*वेतन:* ${newJob.salary}
+    title:
+      document.getElementById("em_title").value.trim(),
 
-*काम की जानकारी:*
-${newJob.desc}`;
+    location:
+      document.getElementById("em_location").value.trim(),
 
-   document.getElementById("employerForm").reset();
+    salary:
+      document.getElementById("em_salary").value.trim(),
 
-   alert("Job सेव हो गई है। अब WhatsApp खुलेगा।");
+    desc:
+      document.getElementById("em_desc").value.trim()
+  };
 
-   window.location.href=
-   "https://wa.me/"+CONTACT_NUMBER+"?text="+encodeURIComponent(message);
- };
+  jobsRef.child(String(newJob.id)).set(newJob)
 
- if(!firebaseReady){
+    .then(function(){
 
-   afterSave();
+      const message=
+        "*RK JOB MITRA - नई Job Post*\n\n"+
+        "*कंपनी:* "+newJob.company+"\n"+
+        "*संपर्क नंबर:* "+newJob.mobile+"\n"+
+        "*नौकरी:* "+newJob.title+"\n"+
+        "*स्थान:* "+newJob.location+"\n"+
+        "*वेतन:* "+newJob.salary+"\n\n"+
+        "*काम की जानकारी:*\n"+newJob.desc;
 
-   return;
- }
+      const url=
+        "https://wa.me/"+
+        CONTACT_NUMBER+
+        "?text="+
+        encodeURIComponent(message);
 
- jobsRef.child(String(newJob.id)).set(newJob).then(afterSave).catch(error=>{
+      document.getElementById("employerForm").reset();
 
-   console.error(error);
+      alert("Job Firebase में सेव हो गई है। अब WhatsApp खुलेगा।");
 
-   alert("Firebase में Job सेव नहीं हुई। फिर भी WhatsApp से Job भेज सकते हैं।");
+      showSection("jobs");
 
-   afterSave();
- });
+      window.open(url,"_blank","noopener,noreferrer");
+
+    })
+
+    .catch(function(error){
+
+      console.error("Firebase job save error:",error);
+
+      alert("Job सेव नहीं हुई। Firebase Rules और इंटरनेट कनेक्शन जांचें।");
+
+    });
 }
 
-function loadJobs(){
-
- if(!firebaseReady){
-
-   renderJobs(jobs);
-
-   return;
- }
-
- jobsRef.on("value",snapshot=>{
-
-   const data=snapshot.val();
-
-   if(data && typeof data==="object"){
-
-     jobs=Object.values(data);
-
-   }else{
-
-     jobs=defaultJobs.slice();
-
-     const updates={};
-
-     jobs.forEach(job=>updates[String(job.id)]=job);
-
-     jobsRef.update(updates).catch(error=>console.error(error));
-   }
-
-   renderJobs(jobs);
-
- },error=>{
-
-   console.error(error);
-
-   jobs=defaultJobs.slice();
-
-   renderJobs(jobs);
- });
-}
-
-renderJobs(jobs);
+renderJobs([]);
 loadJobs();
 
 </script>
