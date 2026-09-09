@@ -37,6 +37,7 @@ body{
     overflow-x:hidden;
 }
 
+/* HEADER */
 header{
     width:100%;
     background:linear-gradient(135deg,#075b99,#087bd1);
@@ -56,6 +57,7 @@ header p{
     line-height:1.5;
 }
 
+/* NAV */
 nav{
     width:100%;
     display:flex;
@@ -73,7 +75,7 @@ nav::-webkit-scrollbar{
 }
 
 nav button{
-    flex:0 0 25%;
+    flex:0 0 20%;
     min-width:120px;
     padding:15px 10px;
     border:0;
@@ -88,6 +90,7 @@ nav button.active{
     color:white;
 }
 
+/* MAIN */
 main{
     width:100%;
     max-width:680px;
@@ -99,6 +102,7 @@ main{
     display:none !important;
 }
 
+/* WELCOME */
 .welcome{
     background:white;
     border-radius:20px;
@@ -120,6 +124,7 @@ main{
     line-height:1.7;
 }
 
+/* HOME CARDS */
 .home-menu{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -153,6 +158,7 @@ main{
     margin-bottom:16px;
 }
 
+/* CONTACT */
 .contact-box{
     background:white;
     border-radius:20px;
@@ -174,6 +180,7 @@ main{
     letter-spacing:1px;
 }
 
+/* SECTION TITLE */
 .section-title{
     color:var(--blue);
     text-align:center;
@@ -181,6 +188,7 @@ main{
     margin:8px 0 18px;
 }
 
+/* FORM */
 .form-box{
     background:white;
     padding:19px;
@@ -242,6 +250,7 @@ textarea{
     background:var(--green);
 }
 
+/* SEARCH */
 .search-box{
     display:flex;
     gap:8px;
@@ -258,6 +267,7 @@ textarea{
     min-width:82px;
 }
 
+/* JOB CARD */
 .job-card{
     background:white;
     border-left:5px solid var(--blue2);
@@ -310,6 +320,7 @@ textarea{
     background:var(--green);
 }
 
+/* BOTTOM BAR */
 .bottom-bar{
     position:fixed;
     left:0;
@@ -344,6 +355,49 @@ textarea{
     background:var(--green);
 }
 
+/* ADMIN */
+.admin-box{
+    background:white;
+    border-radius:18px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.admin-item{
+    border:1px solid #ddd;
+    border-radius:12px;
+    padding:13px;
+    margin:10px 0;
+    background:#fafafa;
+}
+
+.admin-item h3{
+    color:var(--blue);
+    margin-bottom:8px;
+}
+
+.admin-actions{
+    display:flex;
+    gap:8px;
+    margin-top:10px;
+}
+
+.admin-actions button{
+    flex:1;
+}
+
+.status-pending{
+    color:#d97706;
+    font-weight:800;
+}
+
+.status-approved{
+    color:#14833b;
+    font-weight:800;
+}
+
+/* SMALL MOBILE */
 @media(max-width:380px){
     main{
         padding:12px;
@@ -385,10 +439,12 @@ textarea{
     <button onclick="showSection('jobs')">Jobs</button>
     <button onclick="showSection('seeker')">Job Seeker</button>
     <button onclick="showSection('employer')">Employer</button>
+    <button onclick="showSection('admin')">Admin</button>
 </nav>
 
 <main>
 
+<!-- HOME -->
 <section id="home-section">
 
     <div class="welcome">
@@ -430,6 +486,7 @@ textarea{
 
 </section>
 
+<!-- JOBS -->
 <section id="jobs-section" class="hidden">
 
     <h2 class="section-title">नौकरी खोजें</h2>
@@ -439,7 +496,7 @@ textarea{
             id="searchInput"
             type="text"
             placeholder="काम या शहर खोजें..."
-            oninput="searchJobs()">
+            oninput="searchJobs">
 
         <button
             type="button"
@@ -453,6 +510,7 @@ textarea{
 
 </section>
 
+<!-- JOB SEEKER -->
 <section id="seeker-section" class="hidden">
 
     <h2 class="section-title">नौकरी के लिए रजिस्टर करें</h2>
@@ -514,6 +572,7 @@ textarea{
 
 </section>
 
+<!-- EMPLOYER -->
 <section id="employer-section" class="hidden">
 
     <h2 class="section-title">Job Post करें</h2>
@@ -528,11 +587,11 @@ textarea{
                     id="em_company"
                     type="text"
                     required
-                    placeholder="कंपनी का नाम">
+                    placeholder="नाम लिखें">
             </div>
 
             <div class="form-group">
-                <label for="em_mobile">संपर्क मोबाइल नंबर *</label>
+                <label for="em_mobile">संपर्क नंबर *</label>
                 <input
                     id="em_mobile"
                     type="tel"
@@ -540,7 +599,7 @@ textarea{
                     maxlength="10"
                     pattern="[0-9]{10}"
                     required
-                    placeholder="10 digit mobile number">
+                    placeholder="10 digit number">
             </div>
 
             <div class="form-group">
@@ -549,7 +608,7 @@ textarea{
                     id="em_title"
                     type="text"
                     required
-                    placeholder="जैसे Driver, Helper">
+                    placeholder="जैसे Driver">
             </div>
 
             <div class="form-group">
@@ -567,7 +626,7 @@ textarea{
                     id="em_salary"
                     type="text"
                     required
-                    placeholder="जैसे ₹12,000">
+                    placeholder="जैसे ₹12000 - ₹15000">
             </div>
 
             <div class="form-group">
@@ -579,7 +638,7 @@ textarea{
             </div>
 
             <button type="submit" class="btn btn-blue">
-                Job Post करें
+                📤 Job Post करें
             </button>
 
         </form>
@@ -588,8 +647,72 @@ textarea{
 
 </section>
 
+<!-- ADMIN -->
+<section id="admin-section" class="hidden">
+
+    <h2 class="section-title">Admin Panel</h2>
+
+    <div id="adminLoginBox" class="admin-box">
+
+        <div class="form-group">
+            <label for="adminPassword">Admin Password</label>
+            <input
+                id="adminPassword"
+                type="password"
+                placeholder="Password लिखें">
+        </div>
+
+        <button
+            type="button"
+            class="btn btn-blue"
+            onclick="adminLogin()">
+            Admin Login
+        </button>
+
+        <p style="margin-top:10px;color:#666;font-size:13px;">
+            Default password: 1234
+        </p>
+
+    </div>
+
+    <div id="adminPanel" class="hidden">
+
+        <div class="admin-box">
+            <h3 style="color:var(--blue);margin-bottom:10px;">
+                Pending Jobs
+            </h3>
+            <div id="pendingJobs"></div>
+        </div>
+
+        <div class="admin-box">
+            <h3 style="color:var(--blue);margin-bottom:10px;">
+                Approved Jobs
+            </h3>
+            <div id="approvedJobs"></div>
+        </div>
+
+        <div class="admin-box">
+            <h3 style="color:var(--blue);margin-bottom:10px;">
+                Job Seekers
+            </h3>
+            <div id="seekerList"></div>
+        </div>
+
+        <button
+            type="button"
+            class="btn"
+            style="background:#d93025;"
+            onclick="adminLogout()">
+            Admin Logout
+        </button>
+
+    </div>
+
+</section>
+
 </main>
 
+<!-- BOTTOM CONTACT -->
 <div class="bottom-bar">
 
     <a
@@ -608,15 +731,19 @@ textarea{
 
 </div>
 
+<!-- Firebase Realtime Database -->
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-database-compat.js"></script>
 
 <script>
 "use strict";
 
+/* RK JOB MITRA CONTACT */
 const CONTACT_NUMBER = "917224078224";
 const DISPLAY_NUMBER = "7224078224";
+const ADMIN_PASSWORD = "1234";
 
+/* FIREBASE CONFIG */
 const firebaseConfig = {
   apiKey: "AIzaSyCkxdrEgXizC3DVWNvZ3100GC7zcssIsmg",
   authDomain: "ravi-jobmitra.firebaseapp.com",
@@ -630,374 +757,1054 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const db = firebase.database();
+
 const jobsRef = db.ref("jobs");
 const seekersRef = db.ref("seekers");
 
+/* DEFAULT JOBS */
 const defaultJobs = [
+
   {
-    id:1,
-    title:"Helper (हेल्पर)",
-    company:"RK Traders",
-    mobile:DISPLAY_NUMBER,
-    location:"Guna, MP",
-    salary:"₹8,000 - ₹10,000",
-    desc:"दुकान में सामान रखने और साफ-सफाई के लिए मेहनती व्यक्ति चाहिए।"
+    id: 1,
+    title: "Helper (हेल्पर)",
+    company: "RK Traders",
+    mobile: DISPLAY_NUMBER,
+    location: "Guna, MP",
+    salary: "₹8,000 - ₹10,000",
+    desc: "दुकान में सामान रखने और साफ-सफाई के लिए मेहनती व्यक्ति चाहिए।",
+    status: "approved"
   },
+
   {
-    id:2,
-    title:"Driver (ड्राइवर)",
-    company:"Shree Logistics",
-    mobile:DISPLAY_NUMBER,
-    location:"Ashoknagar, MP",
-    salary:"₹12,000 + TA",
-    desc:"पिकअप गाड़ी चलाने के लिए लाइसेंस धारक अनुभवी ड्राइवर चाहिए।"
+    id: 2,
+    title: "Driver (ड्राइवर)",
+    company: "Shree Logistics",
+    mobile: DISPLAY_NUMBER,
+    location: "Ashoknagar, MP",
+    salary: "₹12,000 + TA",
+    desc: "पिकअप गाड़ी चलाने के लिए लाइसेंस धारक अनुभवी ड्राइवर चाहिए।",
+    status: "approved"
   },
+
   {
-    id:3,
-    title:"Electrician (इलेक्ट्रीशियन)",
-    company:"Gupta Electricals",
-    mobile:DISPLAY_NUMBER,
-    location:"Guna, MP",
-    salary:"₹15,000",
-    desc:"हाउस वायरिंग और रिपेयरिंग का काम जानने वाला इलेक्ट्रीशियन चाहिए।"
+    id: 3,
+    title: "Electrician (इलेक्ट्रीशियन)",
+    company: "Gupta Electricals",
+    mobile: DISPLAY_NUMBER,
+    location: "Guna, MP",
+    salary: "₹15,000",
+    desc: "हाउस वायरिंग और रिपेयरिंग का काम जानने वाला इलेक्ट्रीशियन चाहिए।",
+    status: "approved"
   },
+
   {
-    id:4,
-    title:"Security Guard (सिक्योरिटी गार्ड)",
-    company:"SafeHome Security",
-    mobile:DISPLAY_NUMBER,
-    location:"Bina, MP",
-    salary:"₹10,000 - ₹12,000",
-    desc:"सुरक्षा के लिए सिक्योरिटी गार्ड की आवश्यकता है।"
+    id: 4,
+    title: "Security Guard (सिक्योरिटी गार्ड)",
+    company: "SafeHome Security",
+    mobile: DISPLAY_NUMBER,
+    location: "Bina, MP",
+    salary: "₹10,000 - ₹12,000",
+    desc: "सुरक्षा के लिए सिक्योरिटी गार्ड की आवश्यकता है।",
+    status: "approved"
   }
+
 ];
 
-let jobs=[];
+let jobs = [];
+let seekers = [];
+let isAdmin = false;
 
-function loadJobs(){
+/* LOAD JOBS FROM FIREBASE */
+function loadJobs() {
 
-  jobsRef.on("value",function(snapshot){
+  jobsRef.on("value", function(snapshot) {
 
-    const data=snapshot.val();
+    const data = snapshot.val();
 
-    if(data && typeof data==="object"){
+    if (data && typeof data === "object") {
 
-      jobs=Object.keys(data).map(function(key){
+      jobs = Object.keys(data).map(function(key) {
         return data[key];
       });
 
-    }else{
+    } else {
 
-      jobs=defaultJobs.slice();
+      jobs = defaultJobs.slice();
 
-      const updates={};
+      const updates = {};
 
-      jobs.forEach(function(job){
-        updates[String(job.id)]=job;
+      jobs.forEach(function(job) {
+        updates[String(job.id)] = job;
       });
 
-      jobsRef.update(updates).catch(function(error){
-        console.error("Firebase demo jobs save error:",error);
+      jobsRef.update(updates).catch(function(error) {
+        console.error("Firebase demo jobs save error:", error);
       });
+
     }
 
-    renderJobs(jobs);
+    renderJobs(
+      jobs.filter(function(job){
+        return job.status !== "pending";
+      })
+    );
 
-    const input=document.getElementById("searchInput");
+    const input = document.getElementById("searchInput");
 
-    if(input && input.value.trim()){
+    if (input && input.value.trim()) {
       searchJobs();
     }
 
-  },function(error){
+  }, function(error) {
 
-    console.error("Firebase read error:",error);
+    console.error("Firebase read error:", error);
 
-    jobs=defaultJobs.slice();
+    jobs = defaultJobs.slice();
 
-    renderJobs(jobs);
+    renderJobs(
+      jobs.filter(function(job){
+        return job.status !== "pending";
+      })
+    );
 
-    alert("Firebase से Jobs लोड नहीं हो पाईं। कृपया इंटरनेट और Firebase Rules जांचें।");
+    alert(
+      "Firebase से Jobs लोड नहीं हो पाईं। कृपया इंटरनेट और Firebase Rules जांचें।"
+    );
 
   });
+
 }
 
-function showSection(section){
+/* NAVIGATION */
+function showSection(section) {
 
-  const names=["home","jobs","seeker","employer"];
+  const names = [
+    "home",
+    "jobs",
+    "seeker",
+    "employer",
+    "admin"
+  ];
 
-  names.forEach(function(name){
+  names.forEach(function(name) {
 
-    const el=document.getElementById(name+"-section");
+    const el =
+      document.getElementById(
+        name + "-section"
+      );
 
-    if(el){
+    if (el) {
       el.classList.add("hidden");
     }
 
   });
 
-  const selected=document.getElementById(section+"-section");
+  const selected =
+    document.getElementById(
+      section + "-section"
+    );
 
-  if(selected){
+  if (selected) {
     selected.classList.remove("hidden");
   }
 
-  const buttons=document.querySelectorAll("#navbar button");
+  const buttons =
+    document.querySelectorAll(
+      "#navbar button"
+    );
 
-  buttons.forEach(function(button){
+  buttons.forEach(function(button) {
     button.classList.remove("active");
   });
 
-  const index=names.indexOf(section);
+  const index =
+    names.indexOf(section);
 
-  if(index>=0 && buttons[index]){
+  if (index >= 0 && buttons[index]) {
     buttons[index].classList.add("active");
   }
 
-  if(section==="jobs"){
-    renderJobs(jobs);
+  if (section === "jobs") {
+
+    renderJobs(
+      jobs.filter(function(job){
+        return job.status !== "pending";
+      })
+    );
+
   }
 
-  window.scrollTo(0,0);
+  window.scrollTo(0, 0);
+
 }
 
-function escapeHTML(value){
+/* ESCAPE HTML */
+function escapeHTML(value) {
 
-  return String(value==null?"":value)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+  return String(
+    value == null ? "" : value
+  )
+  .replace(/&/g, "&amp;")
+  .replace(/</g, "&lt;")
+  .replace(/>/g, "&gt;")
+  .replace(/"/g, "&quot;")
+  .replace(/'/g, "&#039;");
+
 }
 
-function renderJobs(list){
+/* JOB LIST */
+function renderJobs(list) {
 
-  const container=document.getElementById("jobList");
+  const container =
+    document.getElementById("jobList");
 
-  if(!container) return;
+  if (!container) return;
 
-  container.innerHTML="";
+  container.innerHTML = "";
 
-  if(!Array.isArray(list) || list.length===0){
+  if (
+    !Array.isArray(list) ||
+    list.length === 0
+  ) {
 
-    container.innerHTML=
+    container.innerHTML =
       '<div class="form-box" style="text-align:center;color:#666;">कोई नौकरी नहीं मिली।</div>';
 
     return;
+
   }
 
-  const sorted=list.slice().reverse();
+  const sorted =
+    list.slice().reverse();
 
-  sorted.forEach(function(job){
+  sorted.forEach(function(job) {
 
-    const title=job.title||"";
-    const company=job.company||"";
-    const location=job.location||"";
-    const salary=job.salary||"";
-    const desc=job.desc||"";
+    const title =
+      job.title || "";
 
-    const message=
-      "नमस्ते RK JOB MITRA,\n\n"+
-      "मैं इस नौकरी के लिए आवेदन करना चाहता हूँ।\n\n"+
-      "नौकरी: "+title+"\n"+
-      "कंपनी: "+company+"\n"+
-      "स्थान: "+location+"\n"+
-      "वेतन: "+salary+"\n\n"+
+    const company =
+      job.company || "";
+
+    const location =
+      job.location || "";
+
+    const salary =
+      job.salary || "";
+
+    const desc =
+      job.desc || "";
+
+    const message =
+      "नमस्ते RK JOB MITRA,\n\n" +
+      "मैं इस नौकरी के लिए आवेदन करना चाहता हूँ।\n\n" +
+      "नौकरी: " + title + "\n" +
+      "कंपनी: " + company + "\n" +
+      "स्थान: " + location + "\n" +
+      "वेतन: " + salary + "\n\n" +
       "कृपया मुझे इस नौकरी के बारे में जानकारी दें।";
 
-    const waUrl=
-      "https://wa.me/"+
-      CONTACT_NUMBER+
-      "?text="+
+    const waUrl =
+      "https://wa.me/" +
+      CONTACT_NUMBER +
+      "?text=" +
       encodeURIComponent(message);
 
-    const card=document.createElement("div");
+    const card =
+      document.createElement("div");
 
-    card.className="job-card";
+    card.className =
+      "job-card";
 
-    card.innerHTML=
-      '<div class="job-title">'+escapeHTML(title)+'</div>'+
-      '<div class="job-detail"><strong>कंपनी:</strong> '+escapeHTML(company)+'</div>'+
-      '<div class="job-detail"><strong>स्थान:</strong> '+escapeHTML(location)+'</div>'+
-      '<div class="job-detail"><strong>वेतन:</strong> '+escapeHTML(salary)+'</div>'+
-      '<div class="job-detail"><strong>काम:</strong> '+escapeHTML(desc)+'</div>'+
-      '<div class="job-actions">'+
-        '<a href="tel:+917224078224" class="call-btn">📞 Call</a>'+
-        '<a href="'+waUrl+'" target="_blank" rel="noopener noreferrer" class="wa-btn">💬 WhatsApp</a>'+
+    card.innerHTML =
+      '<div class="job-title">' +
+        escapeHTML(title) +
+      '</div>' +
+
+      '<div class="job-detail">' +
+        '<strong>कंपनी:</strong> ' +
+        escapeHTML(company) +
+      '</div>' +
+
+      '<div class="job-detail">' +
+        '<strong>स्थान:</strong> ' +
+        escapeHTML(location) +
+      '</div>' +
+
+      '<div class="job-detail">' +
+        '<strong>वेतन:</strong> ' +
+        escapeHTML(salary) +
+      '</div>' +
+
+      '<div class="job-detail">' +
+        '<strong>काम:</strong> ' +
+        escapeHTML(desc) +
+      '</div>' +
+
+      '<div class="job-actions">' +
+
+        '<a href="tel:+917224078224" class="call-btn">' +
+          '📞 Call' +
+        '</a>' +
+
+        '<a href="' +
+          waUrl +
+          '" target="_blank" rel="noopener noreferrer" class="wa-btn">' +
+          '💬 WhatsApp' +
+        '</a>' +
+
       '</div>';
 
     container.appendChild(card);
 
   });
+
 }
 
-function searchJobs(){
+/* SEARCH */
+function searchJobs() {
 
-  const input=document.getElementById("searchInput");
+  const input =
+    document.getElementById(
+      "searchInput"
+    );
 
-  if(!input) return;
+  if (!input) return;
 
-  const query=input.value.trim().toLowerCase();
+  const query =
+    input.value
+      .trim()
+      .toLowerCase();
 
-  if(!query){
-    renderJobs(jobs);
+  if (!query) {
+
+    renderJobs(
+      jobs.filter(function(job){
+        return job.status !== "pending";
+      })
+    );
+
     return;
   }
 
-  const filtered=jobs.filter(function(job){
+  const filtered =
+    jobs.filter(function(job) {
 
-    const text=
-      String(job.title||"")+" "+
-      String(job.company||"")+" "+
-      String(job.location||"")+" "+
-      String(job.salary||"")+" "+
-      String(job.desc||"");
+      if (job.status === "pending") {
+        return false;
+      }
 
-    return text.toLowerCase().includes(query);
+      const text =
+        String(job.title || "") +
+        " " +
+        String(job.company || "") +
+        " " +
+        String(job.location || "") +
+        " " +
+        String(job.salary || "") +
+        " " +
+        String(job.desc || "");
 
-  });
+      return text
+        .toLowerCase()
+        .includes(query);
+
+    });
 
   renderJobs(filtered);
+
 }
 
-function openMainWhatsApp(){
+/* MAIN WHATSAPP */
+function openMainWhatsApp() {
 
-  const message=
+  const message =
     "नमस्ते RK JOB MITRA, मुझे नौकरी के बारे में जानकारी चाहिए।";
 
-  const url=
-    "https://wa.me/"+
-    CONTACT_NUMBER+
-    "?text="+
+  const url =
+    "https://wa.me/" +
+    CONTACT_NUMBER +
+    "?text=" +
     encodeURIComponent(message);
 
-  window.open(url,"_blank","noopener,noreferrer");
+  window.open(
+    url,
+    "_blank",
+    "noopener,noreferrer"
+  );
+
 }
 
-function submitSeeker(event){
+/* JOB SEEKER */
+function submitSeeker(event) {
 
   event.preventDefault();
 
-  const name=document.getElementById("sk_name").value.trim();
-  const mobile=document.getElementById("sk_mobile").value.trim();
-  const skill=document.getElementById("sk_skill").value.trim();
-  const location=document.getElementById("sk_location").value.trim();
-  const exp=document.getElementById("sk_exp").value.trim() || "Fresher";
+  const name =
+    document
+      .getElementById("sk_name")
+      .value
+      .trim();
 
-  const seeker={
-    id:Date.now(),
-    name:name,
-    mobile:mobile,
-    skill:skill,
-    location:location,
-    exp:exp,
-    createdAt:new Date().toISOString()
+  const mobile =
+    document
+      .getElementById("sk_mobile")
+      .value
+      .trim();
+
+  const skill =
+    document
+      .getElementById("sk_skill")
+      .value
+      .trim();
+
+  const location =
+    document
+      .getElementById("sk_location")
+      .value
+      .trim();
+
+  const exp =
+    document
+      .getElementById("sk_exp")
+      .value
+      .trim() ||
+      "Fresher";
+
+  const seeker = {
+
+    id: Date.now(),
+
+    name: name,
+
+    mobile: mobile,
+
+    skill: skill,
+
+    location: location,
+
+    exp: exp,
+
+    createdAt:
+      new Date().toISOString()
+
   };
 
-  seekersRef.child(String(seeker.id)).set(seeker)
+  seekersRef
+    .child(String(seeker.id))
+    .set(seeker)
 
-    .then(function(){
+    .then(function() {
 
-      const message=
-        "*RK JOB MITRA - Job Seeker Registration*\n\n"+
-        "*नाम:* "+name+"\n"+
-        "*मोबाइल:* "+mobile+"\n"+
-        "*काम / Skill:* "+skill+"\n"+
-        "*शहर / पता:* "+location+"\n"+
-        "*अनुभव:* "+exp+"\n\n"+
+      const message =
+        "*RK JOB MITRA - Job Seeker Registration*\n\n" +
+
+        "*नाम:* " +
+        name +
+        "\n" +
+
+        "*मोबाइल:* " +
+        mobile +
+        "\n" +
+
+        "*काम / Skill:* " +
+        skill +
+        "\n" +
+
+        "*शहर / पता:* " +
+        location +
+        "\n" +
+
+        "*अनुभव:* " +
+        exp +
+        "\n\n" +
+
         "कृपया मुझे मेरे काम के अनुसार नौकरी बताएं।";
 
-      const url=
-        "https://wa.me/"+
-        CONTACT_NUMBER+
-        "?text="+
+      const url =
+        "https://wa.me/" +
+        CONTACT_NUMBER +
+        "?text=" +
         encodeURIComponent(message);
 
-      document.getElementById("seekerForm").reset();
+      document
+        .getElementById("seekerForm")
+        .reset();
 
-      alert("आपकी जानकारी Firebase में सेव हो गई है। अब WhatsApp खुलेगा।");
+      alert(
+        "आपकी जानकारी Firebase में सेव हो गई है। अब WhatsApp खुलेगा।"
+      );
 
-      window.open(url,"_blank","noopener,noreferrer");
+      window.open(
+        url,
+        "_blank",
+        "noopener,noreferrer"
+      );
 
     })
 
-    .catch(function(error){
+    .catch(function(error) {
 
-      console.error("Firebase seeker save error:",error);
+      console.error(
+        "Firebase seeker save error:",
+        error
+      );
 
-      alert("जानकारी Firebase में सेव नहीं हुई। Firebase Rules और इंटरनेट कनेक्शन जांचें।");
+      alert(
+        "जानकारी Firebase में सेव नहीं हुई। Firebase Rules और इंटरनेट कनेक्शन जांचें।"
+      );
 
     });
+
 }
 
-function submitEmployer(event){
+/* EMPLOYER */
+function submitEmployer(event) {
 
   event.preventDefault();
 
-  const newJob={
+  const newJob = {
 
-    id:Date.now(),
+    id: Date.now(),
 
     company:
-      document.getElementById("em_company").value.trim(),
+      document
+        .getElementById("em_company")
+        .value
+        .trim(),
 
     mobile:
-      document.getElementById("em_mobile").value.trim(),
+      document
+        .getElementById("em_mobile")
+        .value
+        .trim(),
 
     title:
-      document.getElementById("em_title").value.trim(),
+      document
+        .getElementById("em_title")
+        .value
+        .trim(),
 
     location:
-      document.getElementById("em_location").value.trim(),
+      document
+        .getElementById("em_location")
+        .value
+        .trim(),
 
     salary:
-      document.getElementById("em_salary").value.trim(),
+      document
+        .getElementById("em_salary")
+        .value
+        .trim(),
 
     desc:
-      document.getElementById("em_desc").value.trim()
+      document
+        .getElementById("em_desc")
+        .value
+        .trim(),
+
+    status:
+      "pending",
+
+    createdAt:
+      new Date().toISOString()
+
   };
 
-  jobsRef.child(String(newJob.id)).set(newJob)
+  jobsRef
+    .child(String(newJob.id))
+    .set(newJob)
 
-    .then(function(){
+    .then(function() {
 
-      const message=
-        "*RK JOB MITRA - नई Job Post*\n\n"+
-        "*कंपनी:* "+newJob.company+"\n"+
-        "*संपर्क नंबर:* "+newJob.mobile+"\n"+
-        "*नौकरी:* "+newJob.title+"\n"+
-        "*स्थान:* "+newJob.location+"\n"+
-        "*वेतन:* "+newJob.salary+"\n\n"+
-        "*काम की जानकारी:*\n"+newJob.desc;
+      const message =
+        "*RK JOB MITRA - नई Job Post*\n\n" +
 
-      const url=
-        "https://wa.me/"+
-        CONTACT_NUMBER+
-        "?text="+
+        "*कंपनी:* " +
+        newJob.company +
+        "\n" +
+
+        "*संपर्क नंबर:* " +
+        newJob.mobile +
+        "\n" +
+
+        "*नौकरी:* " +
+        newJob.title +
+        "\n" +
+
+        "*स्थान:* " +
+        newJob.location +
+        "\n" +
+
+        "*वेतन:* " +
+        newJob.salary +
+        "\n\n" +
+
+        "*काम की जानकारी:*\n" +
+        newJob.desc;
+
+      const url =
+        "https://wa.me/" +
+        CONTACT_NUMBER +
+        "?text=" +
         encodeURIComponent(message);
 
-      document.getElementById("employerForm").reset();
+      document
+        .getElementById("employerForm")
+        .reset();
 
-      alert("Job Firebase में सेव हो गई है। अब WhatsApp खुलेगा।");
+      alert(
+        "Job Firebase में सेव हो गई है। Admin approve करने के बाद यह Public Jobs में दिखाई देगी।"
+      );
 
       showSection("jobs");
 
-      window.open(url,"_blank","noopener,noreferrer");
+      window.open(
+        url,
+        "_blank",
+        "noopener,noreferrer"
+      );
+
+    })
+
+    .catch(function(error) {
+
+      console.error(
+        "Firebase job save error:",
+        error
+      );
+
+      alert(
+        "Job सेव नहीं हुई। Firebase Rules और इंटरनेट कनेक्शन जांचें।"
+      );
+
+    });
+
+}
+
+/* ADMIN LOGIN */
+function adminLogin() {
+
+  const password =
+    document
+      .getElementById("adminPassword")
+      .value;
+
+  if (
+    password !==
+    ADMIN_PASSWORD
+  ) {
+
+    alert(
+      "गलत Admin Password"
+    );
+
+    return;
+  }
+
+  isAdmin = true;
+
+  document
+    .getElementById("adminLoginBox")
+    .classList
+    .add("hidden");
+
+  document
+    .getElementById("adminPanel")
+    .classList
+    .remove("hidden");
+
+  renderAdmin();
+
+  loadSeekers();
+
+  alert(
+    "Admin Login सफल"
+  );
+
+}
+
+/* ADMIN LOGOUT */
+function adminLogout() {
+
+  isAdmin = false;
+
+  document
+    .getElementById("adminPanel")
+    .classList
+    .add("hidden");
+
+  document
+    .getElementById("adminLoginBox")
+    .classList
+    .remove("hidden");
+
+  document
+    .getElementById("adminPassword")
+    .value = "";
+
+}
+
+/* APPROVE JOB */
+function approveJob(id) {
+
+  jobsRef
+    .child(String(id))
+    .update({
+      status: "approved"
+    })
+
+    .then(function(){
+
+      alert(
+        "Job Approve हो गई। अब Public Jobs में दिखाई देगी।"
+      );
+
+      renderAdmin();
 
     })
 
     .catch(function(error){
 
-      console.error("Firebase job save error:",error);
+      console.error(error);
 
-      alert("Job सेव नहीं हुई। Firebase Rules और इंटरनेट कनेक्शन जांचें।");
+      alert(
+        "Job approve नहीं हुई। Firebase Rules जांचें।"
+      );
 
     });
+
 }
 
+/* DELETE JOB */
+function deleteJob(id) {
+
+  if (
+    !confirm(
+      "क्या यह Job delete करनी है?"
+    )
+  ) {
+    return;
+  }
+
+  jobsRef
+    .child(String(id))
+    .remove()
+
+    .then(function(){
+
+      alert(
+        "Job delete हो गई।"
+      );
+
+      renderAdmin();
+
+    })
+
+    .catch(function(error){
+
+      console.error(error);
+
+      alert(
+        "Job delete नहीं हुई। Firebase Rules जांचें।"
+      );
+
+    });
+
+}
+
+/* ADMIN RENDER */
+function renderAdmin() {
+
+  if (!isAdmin) {
+    return;
+  }
+
+  const pendingBox =
+    document.getElementById(
+      "pendingJobs"
+    );
+
+  const approvedBox =
+    document.getElementById(
+      "approvedJobs"
+    );
+
+  if (
+    !pendingBox ||
+    !approvedBox
+  ) {
+    return;
+  }
+
+  pendingBox.innerHTML = "";
+
+  approvedBox.innerHTML = "";
+
+  const pending =
+    jobs.filter(function(job){
+      return job.status === "pending";
+    });
+
+  const approved =
+    jobs.filter(function(job){
+      return job.status !== "pending";
+    });
+
+  if (
+    pending.length === 0
+  ) {
+
+    pendingBox.innerHTML =
+      '<p style="color:#666;">कोई Pending Job नहीं है।</p>';
+
+  } else {
+
+    pending
+      .slice()
+      .reverse()
+      .forEach(function(job){
+
+        const item =
+          document.createElement(
+            "div"
+          );
+
+        item.className =
+          "admin-item";
+
+        item.innerHTML =
+
+          '<h3>' +
+          escapeHTML(job.title) +
+          '</h3>' +
+
+          '<div><b>कंपनी:</b> ' +
+          escapeHTML(job.company) +
+          '</div>' +
+
+          '<div><b>मोबाइल:</b> ' +
+          escapeHTML(job.mobile) +
+          '</div>' +
+
+          '<div><b>स्थान:</b> ' +
+          escapeHTML(job.location) +
+          '</div>' +
+
+          '<div><b>वेतन:</b> ' +
+          escapeHTML(job.salary) +
+          '</div>' +
+
+          '<div><b>काम:</b> ' +
+          escapeHTML(job.desc) +
+          '</div>' +
+
+          '<div class="status-pending">' +
+          'स्थिति: Pending' +
+          '</div>' +
+
+          '<div class="admin-actions">' +
+
+          '<button class="btn btn-green" onclick="approveJob(' +
+          Number(job.id) +
+          ')">' +
+          'Approve' +
+          '</button>' +
+
+          '<button class="btn" style="background:#d93025" onclick="deleteJob(' +
+          Number(job.id) +
+          ')">' +
+          'Delete' +
+          '</button>' +
+
+          '</div>';
+
+        pendingBox.appendChild(
+          item
+        );
+
+      });
+
+  }
+
+  if (
+    approved.length === 0
+  ) {
+
+    approvedBox.innerHTML =
+      '<p style="color:#666;">कोई Approved Job नहीं है।</p>';
+
+  } else {
+
+    approved
+      .slice()
+      .reverse()
+      .forEach(function(job){
+
+        const item =
+          document.createElement(
+            "div"
+          );
+
+        item.className =
+          "admin-item";
+
+        item.innerHTML =
+
+          '<h3>' +
+          escapeHTML(job.title) +
+          '</h3>' +
+
+          '<div><b>कंपनी:</b> ' +
+          escapeHTML(job.company) +
+          '</div>' +
+
+          '<div><b>स्थान:</b> ' +
+          escapeHTML(job.location) +
+          '</div>' +
+
+          '<div><b>वेतन:</b> ' +
+          escapeHTML(job.salary) +
+          '</div>' +
+
+          '<div class="status-approved">' +
+          'स्थिति: Approved' +
+          '</div>' +
+
+          '<div class="admin-actions">' +
+
+          '<button class="btn" style="background:#d93025" onclick="deleteJob(' +
+          Number(job.id) +
+          ')">' +
+          'Delete' +
+          '</button>' +
+
+          '</div>';
+
+        approvedBox.appendChild(
+          item
+        );
+
+      });
+
+  }
+
+  renderSeekers();
+
+}
+
+/* LOAD SEEKERS */
+function loadSeekers() {
+
+  seekersRef.on(
+    "value",
+    function(snapshot){
+
+      const data =
+        snapshot.val();
+
+      seekers =
+        data &&
+        typeof data === "object"
+
+        ? Object.keys(data)
+            .map(function(key){
+              return data[key];
+            })
+
+        : [];
+
+      if (isAdmin) {
+        renderSeekers();
+      }
+
+    },
+
+    function(error){
+
+      console.error(
+        "Firebase seeker read error:",
+        error
+      );
+
+    }
+  );
+
+}
+
+/* RENDER SEEKERS */
+function renderSeekers() {
+
+  const box =
+    document.getElementById(
+      "seekerList"
+    );
+
+  if (!box) {
+    return;
+  }
+
+  box.innerHTML = "";
+
+  if (
+    !seekers.length
+  ) {
+
+    box.innerHTML =
+      '<p style="color:#666;">अभी कोई Job Seeker Registration नहीं है।</p>';
+
+    return;
+
+  }
+
+  seekers
+    .slice()
+    .reverse()
+    .forEach(function(seeker){
+
+      const item =
+        document.createElement(
+          "div"
+        );
+
+      item.className =
+        "admin-item";
+
+      item.innerHTML =
+
+        '<h3>' +
+        escapeHTML(seeker.name) +
+        '</h3>' +
+
+        '<div><b>मोबाइल:</b> ' +
+        escapeHTML(seeker.mobile) +
+        '</div>' +
+
+        '<div><b>काम / Skill:</b> ' +
+        escapeHTML(seeker.skill) +
+        '</div>' +
+
+        '<div><b>शहर / पता:</b> ' +
+        escapeHTML(seeker.location) +
+        '</div>' +
+
+        '<div><b>अनुभव:</b> ' +
+        escapeHTML(seeker.exp) +
+        '</div>';
+
+      box.appendChild(
+        item
+      );
+
+    });
+
+}
+
+/* START */
 renderJobs([]);
+
 loadJobs();
+
+loadSeekers();
 
 </script>
 
